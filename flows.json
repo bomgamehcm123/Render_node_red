@@ -1,8 +1,77 @@
 [
     {
+        "id": "a26d5d20af5c6be2",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "95c11e8432e62ddb",
+        "type": "group",
+        "z": "a26d5d20af5c6be2",
+        "name": "Đã đăng kí",
+        "style": {
+            "fill": "#ff7f7f",
+            "label": true
+        },
+        "nodes": [
+            "e195bc4fc41f7e35",
+            "cc702b49a4f030e6",
+            "a33bb55a4ff8b5a1",
+            "7114ca96d190bebf",
+            "ee520d3d2efc4167",
+            "d4d29464e556a853",
+            "23e809d9d0d641c7",
+            "4b6605032728b106",
+            "9ffd8c502d885165",
+            "f5270f2a13d6562f",
+            "cd41a8992a69f7a8",
+            "467873c6577f297c",
+            "9a445bfe1a10d69e",
+            "f5a944f8a5a713db",
+            "2f76bcdca28c2d4a",
+            "c895e9a2198c98ef",
+            "4bfd39b34a79db2d",
+            "bbb3c014b2e2a32f",
+            "3b590e948ed9e709",
+            "fc2a31a8d88eb433"
+        ],
+        "x": 54,
+        "y": 159,
+        "w": 1072,
+        "h": 502
+    },
+    {
+        "id": "8ae63e4ecefe3e73",
+        "type": "group",
+        "z": "a26d5d20af5c6be2",
+        "name": "",
+        "style": {
+            "fill": "#ffff7f",
+            "label": true
+        },
+        "nodes": [
+            "67712cfd66ac5721",
+            "9b2bfeb103a0616c",
+            "a4b59dfee4e7666a",
+            "64b4d1920fc579e3",
+            "1c5c66c4f01e2b0f",
+            "35a1ec46f94a9eb2",
+            "5fe9244ff0019e1e",
+            "85dbf2a5b71298bb"
+        ],
+        "x": 124,
+        "y": 699,
+        "w": 932,
+        "h": 382
+    },
+    {
         "id": "e195bc4fc41f7e35",
         "type": "ui_text_input",
-        "z": "0102ef3a5e2d0b80",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "name": "Nhập số đèn",
         "label": "         Số đèn (1–70)",
         "tooltip": "Nhập đèn cần bật ( Không giới hạn) ",
@@ -17,7 +86,7 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "str",
-        "x": 210,
+        "x": 150,
         "y": 200,
         "wires": [
             [
@@ -28,7 +97,8 @@
     {
         "id": "cc702b49a4f030e6",
         "type": "change",
-        "z": "0102ef3a5e2d0b80",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "name": "Lưu vào flow",
         "rules": [
             {
@@ -48,7 +118,8 @@
     {
         "id": "a33bb55a4ff8b5a1",
         "type": "ui_button",
-        "z": "0102ef3a5e2d0b80",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "name": "Gửi MQTT",
         "group": "a37bc6ea16728bdb",
         "order": 3,
@@ -65,18 +136,19 @@
         "payloadType": "str",
         "topic": "",
         "topicType": "str",
-        "x": 220,
+        "x": 150,
         "y": 260,
         "wires": [
             [
-                "7114ca96d190bebf"
+                "3b590e948ed9e709"
             ]
         ]
     },
     {
         "id": "7114ca96d190bebf",
         "type": "function",
-        "z": "0102ef3a5e2d0b80",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "name": "Tạo JSON",
         "func": "let device = flow.get(\"device_num\") || 1;\nlet hour = flow.get(\"hour_val\") || 1;\n\nmsg.payload = {\n    device: device,\n    Hour: hour\n};\nreturn msg;\n",
         "outputs": 1,
@@ -98,7 +170,8 @@
     {
         "id": "ee520d3d2efc4167",
         "type": "mqtt out",
-        "z": "0102ef3a5e2d0b80",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "name": "set",
         "topic": "SV_ON21146282",
         "qos": "0",
@@ -116,7 +189,8 @@
     {
         "id": "d4d29464e556a853",
         "type": "ui_text_input",
-        "z": "0102ef3a5e2d0b80",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "name": "Nhập số đèn",
         "label": "         Số đèn (1–70)",
         "tooltip": "Nhập đèn cần tắt",
@@ -142,7 +216,8 @@
     {
         "id": "23e809d9d0d641c7",
         "type": "change",
-        "z": "0102ef3a5e2d0b80",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "name": "Lưu vào flow",
         "rules": [
             {
@@ -162,7 +237,8 @@
     {
         "id": "4b6605032728b106",
         "type": "ui_button",
-        "z": "0102ef3a5e2d0b80",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "name": "Gửi MQTT",
         "group": "a37bc6ea16728bdb",
         "order": 5,
@@ -179,18 +255,19 @@
         "payloadType": "str",
         "topic": "",
         "topicType": "str",
-        "x": 220,
+        "x": 150,
         "y": 520,
         "wires": [
             [
-                "9ffd8c502d885165"
+                "fc2a31a8d88eb433"
             ]
         ]
     },
     {
         "id": "9ffd8c502d885165",
         "type": "function",
-        "z": "0102ef3a5e2d0b80",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "name": "Tạo JSON",
         "func": "let device = flow.get(\"device_num\") || 1;\n\n\nmsg.payload = {\n    device: device,\n    trigger: true\n};\nreturn msg;\n",
         "outputs": 1,
@@ -212,7 +289,8 @@
     {
         "id": "f5270f2a13d6562f",
         "type": "mqtt out",
-        "z": "0102ef3a5e2d0b80",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "name": "OFF_GUEST",
         "topic": "SV_OFF21146282",
         "qos": "0",
@@ -230,7 +308,8 @@
     {
         "id": "cd41a8992a69f7a8",
         "type": "change",
-        "z": "0102ef3a5e2d0b80",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "name": "Xóa redirect",
         "rules": [
             {
@@ -252,7 +331,8 @@
     {
         "id": "467873c6577f297c",
         "type": "delay",
-        "z": "0102ef3a5e2d0b80",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "name": "Delay xóa redirect",
         "pauseType": "delay",
         "timeout": "3",
@@ -276,7 +356,8 @@
     {
         "id": "9a445bfe1a10d69e",
         "type": "change",
-        "z": "0102ef3a5e2d0b80",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "name": "Set redirect",
         "rules": [
             {
@@ -299,7 +380,8 @@
     {
         "id": "f5a944f8a5a713db",
         "type": "ui_template",
-        "z": "0102ef3a5e2d0b80",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "group": "a37bc6ea16728bdb",
         "name": "Thông báo & Chuyển trang",
         "order": 6,
@@ -320,7 +402,8 @@
     {
         "id": "2f76bcdca28c2d4a",
         "type": "change",
-        "z": "0102ef3a5e2d0b80",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "name": "Xóa redirect",
         "rules": [
             {
@@ -342,7 +425,8 @@
     {
         "id": "c895e9a2198c98ef",
         "type": "delay",
-        "z": "0102ef3a5e2d0b80",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "name": "Delay xóa redirect",
         "pauseType": "delay",
         "timeout": "3",
@@ -366,7 +450,8 @@
     {
         "id": "4bfd39b34a79db2d",
         "type": "change",
-        "z": "0102ef3a5e2d0b80",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "name": "Set redirect",
         "rules": [
             {
@@ -389,7 +474,8 @@
     {
         "id": "bbb3c014b2e2a32f",
         "type": "ui_toast",
-        "z": "0102ef3a5e2d0b80",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "position": "top right",
         "displayTime": "5",
         "highlight": "",
@@ -408,7 +494,8 @@
     {
         "id": "9b2bfeb103a0616c",
         "type": "ui_button",
-        "z": "0102ef3a5e2d0b80",
+        "z": "a26d5d20af5c6be2",
+        "g": "8ae63e4ecefe3e73",
         "name": "Gửi MQTT",
         "group": "5e497d8f50e6c2b1",
         "order": 1,
@@ -425,8 +512,8 @@
         "payloadType": "str",
         "topic": "",
         "topicType": "str",
-        "x": 430,
-        "y": 740,
+        "x": 240,
+        "y": 760,
         "wires": [
             [
                 "a4b59dfee4e7666a"
@@ -436,7 +523,8 @@
     {
         "id": "a4b59dfee4e7666a",
         "type": "change",
-        "z": "0102ef3a5e2d0b80",
+        "z": "a26d5d20af5c6be2",
+        "g": "8ae63e4ecefe3e73",
         "name": "Set redirect",
         "rules": [
             {
@@ -447,8 +535,8 @@
                 "tot": "str"
             }
         ],
-        "x": 640,
-        "y": 720,
+        "x": 450,
+        "y": 740,
         "wires": [
             [
                 "67712cfd66ac5721",
@@ -459,7 +547,8 @@
     {
         "id": "67712cfd66ac5721",
         "type": "delay",
-        "z": "0102ef3a5e2d0b80",
+        "z": "a26d5d20af5c6be2",
+        "g": "8ae63e4ecefe3e73",
         "name": "Delay xóa redirect",
         "pauseType": "delay",
         "timeout": "3",
@@ -472,8 +561,8 @@
         "randomUnits": "seconds",
         "allowrate": false,
         "outputs": 1,
-        "x": 860,
-        "y": 720,
+        "x": 670,
+        "y": 740,
         "wires": [
             [
                 "64b4d1920fc579e3"
@@ -483,7 +572,8 @@
     {
         "id": "64b4d1920fc579e3",
         "type": "change",
-        "z": "0102ef3a5e2d0b80",
+        "z": "a26d5d20af5c6be2",
+        "g": "8ae63e4ecefe3e73",
         "name": "Xóa redirect",
         "rules": [
             {
@@ -494,8 +584,8 @@
                 "tot": "str"
             }
         ],
-        "x": 800,
-        "y": 820,
+        "x": 610,
+        "y": 840,
         "wires": [
             [
                 "1c5c66c4f01e2b0f"
@@ -505,7 +595,8 @@
     {
         "id": "1c5c66c4f01e2b0f",
         "type": "ui_template",
-        "z": "0102ef3a5e2d0b80",
+        "z": "a26d5d20af5c6be2",
+        "g": "8ae63e4ecefe3e73",
         "group": "a37bc6ea16728bdb",
         "name": "Thông báo & Chuyển trang",
         "order": 7,
@@ -517,10 +608,108 @@
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 1100,
-        "y": 800,
+        "x": 910,
+        "y": 840,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "35a1ec46f94a9eb2",
+        "type": "mqtt in",
+        "z": "a26d5d20af5c6be2",
+        "g": "8ae63e4ecefe3e73",
+        "name": "MQTT Nhận token",
+        "topic": "token/check21146282",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "37fcf5bfccf8b220",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 240,
+        "y": 980,
+        "wires": [
+            [
+                "5fe9244ff0019e1e",
+                "85dbf2a5b71298bb"
+            ]
+        ]
+    },
+    {
+        "id": "5fe9244ff0019e1e",
+        "type": "debug",
+        "z": "a26d5d20af5c6be2",
+        "g": "8ae63e4ecefe3e73",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "85dbf2a5b71298bb",
+        "type": "function",
+        "z": "a26d5d20af5c6be2",
+        "g": "8ae63e4ecefe3e73",
+        "name": "Kiểm tra token",
+        "func": "const data = JSON.parse(msg.payload);\n\n// Kiểm tra nếu có token mới\nif (data.token) {\n    const currentToken = flow.get(\"currentToken\");\n    const tokenTimestamp = flow.get(\"tokenTimestamp\");\n    const now = new Date().getTime();\n\n    const threeMinutes = 3 * 60 * 1000;\n\n    // Nếu chưa có token hoặc token đã hết hạn hoặc token khác thì cập nhật mới\n    if (!currentToken || (now - tokenTimestamp > threeMinutes) || data.token !== currentToken) {\n        flow.set(\"currentToken\", data.token);\n        flow.set(\"tokenTimestamp\", now);\n        flow.set(\"allow\", true);\n    } else {\n        // Token hợp lệ và còn hiệu lực\n        flow.set(\"allow\", true);\n    }\n} else {\n    flow.set(\"allow\", false);\n}\n\nreturn null;\n",
+        "outputs": 0,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "3b590e948ed9e709",
+        "type": "function",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "name": "Check quyền",
+        "func": "if (flow.get(\"allow\") === true) {\n    return msg;\n} else {\n    node.warn(\"Không có quyền sử dụng\");\n    return null;\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 320,
+        "wires": [
+            [
+                "7114ca96d190bebf"
+            ]
+        ]
+    },
+    {
+        "id": "fc2a31a8d88eb433",
+        "type": "function",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "name": "Check quyền",
+        "func": "if (flow.get(\"allow\") === true) {\n    return msg;\n} else {\n    node.warn(\"Không có quyền sử dụng\");\n    return null;\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 620,
+        "wires": [
+            [
+                "9ffd8c502d885165"
+            ]
         ]
     },
     {
