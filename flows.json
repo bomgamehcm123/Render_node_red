@@ -60,12 +60,16 @@
             "1c5c66c4f01e2b0f",
             "35a1ec46f94a9eb2",
             "5fe9244ff0019e1e",
-            "85dbf2a5b71298bb"
+            "ui_notify",
+            "token_checker",
+            "token_valid_checker",
+            "check_interval",
+            "7e233b7924eb3376"
         ],
         "x": 124,
         "y": 699,
         "w": 932,
-        "h": 382
+        "h": 442
     },
     {
         "id": "e195bc4fc41f7e35",
@@ -387,7 +391,7 @@
         "order": 6,
         "width": 0,
         "height": 0,
-        "format": "<div style=\"text-align:center; font-size:20px; color:red;\">\n    <p id=\"success-msg\" style=\"display:none;\">✅ Vui lòng thoát sau khi dùng!</p>\n</div>\n\n<script>\n(function(scope) {\n    scope.$watch('msg.payload', function(payload) {\n        if (payload === 'redirect') {\n            document.getElementById('success-msg').style.display = 'block';\n            setTimeout(() => {\n                window.location.href = \"https://cisat.hcmute.edu.vn/\";\n            }, 15000);\n        } else {\n            document.getElementById('success-msg').style.display = 'none';\n        }\n    });\n})(scope);\n</script>",
+        "format": "<div style=\"text-align:center; font-size:20px; color:red;\">\n    <p id=\"success-msg\" style=\"display:none;\">✅ Vui lòng thoát sau khi dùng!</p>\n</div>\n\n<script>\n(function(scope) {\n    scope.$watch('msg.payload', function(payload) {\n        if (payload === 'redirect') {\n            document.getElementById('success-msg').style.display = 'block';\n            setTimeout(() => {\n                window.location.href = \"https://cisat.hcmute.edu.vn/\";\n            }, 30000);\n        } else {\n            document.getElementById('success-msg').style.display = 'none';\n        }\n    });\n})(scope);\n</script>",
         "storeOutMessages": false,
         "fwdInMessages": false,
         "resendOnRefresh": false,
@@ -584,8 +588,8 @@
                 "tot": "str"
             }
         ],
-        "x": 610,
-        "y": 840,
+        "x": 650,
+        "y": 820,
         "wires": [
             [
                 "1c5c66c4f01e2b0f"
@@ -632,7 +636,7 @@
         "wires": [
             [
                 "5fe9244ff0019e1e",
-                "85dbf2a5b71298bb"
+                "token_checker"
             ]
         ]
     },
@@ -649,25 +653,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 530,
-        "y": 960,
-        "wires": []
-    },
-    {
-        "id": "85dbf2a5b71298bb",
-        "type": "function",
-        "z": "a26d5d20af5c6be2",
-        "g": "8ae63e4ecefe3e73",
-        "name": "Kiểm tra token",
-        "func": "const data = JSON.parse(msg.payload);\n\n// Kiểm tra nếu có token mới\nif (data.token) {\n    const currentToken = flow.get(\"currentToken\");\n    const tokenTimestamp = flow.get(\"tokenTimestamp\");\n    const now = new Date().getTime();\n\n    const threeMinutes = 3 * 60 * 1000;\n\n    // Nếu chưa có token hoặc token đã hết hạn hoặc token khác thì cập nhật mới\n    if (!currentToken || (now - tokenTimestamp > threeMinutes) || data.token !== currentToken) {\n        flow.set(\"currentToken\", data.token);\n        flow.set(\"tokenTimestamp\", now);\n        flow.set(\"allow\", true);\n    } else {\n        // Token hợp lệ và còn hiệu lực\n        flow.set(\"allow\", true);\n    }\n} else {\n    flow.set(\"allow\", false);\n}\n\nreturn null;\n",
-        "outputs": 0,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 450,
-        "y": 1040,
+        "x": 420,
+        "y": 920,
         "wires": []
     },
     {
@@ -711,6 +698,102 @@
                 "9ffd8c502d885165"
             ]
         ]
+    },
+    {
+        "id": "token_checker",
+        "type": "function",
+        "z": "a26d5d20af5c6be2",
+        "g": "8ae63e4ecefe3e73",
+        "name": "Kiểm tra token",
+        "func": "// Parse token\nconst data = JSON.parse(msg.payload);\n\nconst currentToken = flow.get(\"currentToken\");\nconst tokenTimestamp = flow.get(\"tokenTimestamp\");\nconst now = new Date().getTime();\nconst threeMinutes = 3 * 60 * 1000;\n\nif (data.token) {\n    if (!currentToken || (now - tokenTimestamp > threeMinutes) || data.token !== currentToken) {\n        flow.set(\"currentToken\", data.token);\n        flow.set(\"tokenTimestamp\", now);\n        flow.set(\"allow\", true);\n    } else {\n        flow.set(\"allow\", true);\n    }\n} else {\n    flow.set(\"allow\", false);\n}\n\nreturn null;",
+        "outputs": 0,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "token_valid_checker",
+        "type": "function",
+        "z": "a26d5d20af5c6be2",
+        "g": "8ae63e4ecefe3e73",
+        "name": "Kiểm tra hiệu lực",
+        "func": "const tokenTimestamp = flow.get(\"tokenTimestamp\") || 0;\nconst now = new Date().getTime();\nconst threeMinutes = 3 * 60 * 1000;\n\nif (now - tokenTimestamp > threeMinutes) {\n    flow.set(\"allow\", false);\n    return { payload: \"Hết quyền truy cập, vui lòng đăng nhập lại\" };\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 1080,
+        "wires": [
+            [
+                "ui_notify",
+                "7e233b7924eb3376"
+            ]
+        ]
+    },
+    {
+        "id": "check_interval",
+        "type": "inject",
+        "z": "a26d5d20af5c6be2",
+        "g": "8ae63e4ecefe3e73",
+        "name": "Check token mỗi 10s",
+        "props": [],
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "x": 360,
+        "y": 1080,
+        "wires": [
+            [
+                "token_valid_checker"
+            ]
+        ]
+    },
+    {
+        "id": "ui_notify",
+        "type": "ui_toast",
+        "z": "a26d5d20af5c6be2",
+        "g": "8ae63e4ecefe3e73",
+        "position": "top right",
+        "displayTime": "5",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "Thông báo UI",
+        "x": 800,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "7e233b7924eb3376",
+        "type": "debug",
+        "z": "a26d5d20af5c6be2",
+        "g": "8ae63e4ecefe3e73",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 1040,
+        "wires": []
     },
     {
         "id": "a37bc6ea16728bdb",
