@@ -996,7 +996,7 @@
     {
         "id": "f3de46927529ab11",
         "type": "ui_tab",
-        "name": "Sinh vien",
+        "name": "Sinh viên - Giảng viên",
         "icon": "dashboard",
         "order": 1,
         "disabled": false,
