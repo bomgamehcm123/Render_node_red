@@ -36,7 +36,9 @@
             "4bfd39b34a79db2d",
             "bbb3c014b2e2a32f",
             "3b590e948ed9e709",
-            "fc2a31a8d88eb433"
+            "fc2a31a8d88eb433",
+            "84625b7537e9088b",
+            "260df5bc51bf776f"
         ],
         "x": 54,
         "y": 159,
@@ -84,13 +86,13 @@
         "label": "         Số đèn (1–70)",
         "tooltip": "Nhập đèn cần bật ( Không giới hạn) ",
         "group": "a37bc6ea16728bdb",
-        "order": 2,
+        "order": 1,
         "width": 6,
         "height": 2,
         "passthru": true,
         "mode": "number",
         "delay": 0,
-        "topic": "",
+        "topic": "input",
         "sendOnBlur": true,
         "className": "",
         "topicType": "str",
@@ -130,7 +132,7 @@
         "g": "95c11e8432e62ddb",
         "name": "Gửi MQTT",
         "group": "a37bc6ea16728bdb",
-        "order": 3,
+        "order": 2,
         "width": 6,
         "height": 1,
         "passthru": false,
@@ -158,7 +160,7 @@
         "z": "a26d5d20af5c6be2",
         "g": "95c11e8432e62ddb",
         "name": "Tạo JSON",
-        "func": "let device = flow.get(\"device_num\") || 1;\nlet hour = flow.get(\"hour_val\") || 1;\n\nmsg.payload = {\n    device: device,\n    Hour: hour\n};\nreturn msg;\n",
+        "func": "let device = flow.get(\"device_num\") || 1;\nlet hour = flow.get(\"hour_val\") || 1;\n\nmsg.payload = {\n    device: device,\n    Hour: hour\n};\n\nreturn msg;\n\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -171,7 +173,8 @@
             [
                 "ee520d3d2efc4167",
                 "4bfd39b34a79db2d",
-                "bbb3c014b2e2a32f"
+                "bbb3c014b2e2a32f",
+                "84625b7537e9088b"
             ]
         ]
     },
@@ -203,13 +206,13 @@
         "label": "         Số đèn (1–70)",
         "tooltip": "Nhập đèn cần tắt",
         "group": "a37bc6ea16728bdb",
-        "order": 4,
+        "order": 3,
         "width": 6,
         "height": 2,
         "passthru": true,
         "mode": "number",
         "delay": 0,
-        "topic": "",
+        "topic": "input",
         "sendOnBlur": true,
         "className": "",
         "topicType": "str",
@@ -249,7 +252,7 @@
         "g": "95c11e8432e62ddb",
         "name": "Gửi MQTT",
         "group": "a37bc6ea16728bdb",
-        "order": 5,
+        "order": 4,
         "width": 6,
         "height": 1,
         "passthru": false,
@@ -290,7 +293,8 @@
             [
                 "f5270f2a13d6562f",
                 "9a445bfe1a10d69e",
-                "bbb3c014b2e2a32f"
+                "bbb3c014b2e2a32f",
+                "260df5bc51bf776f"
             ]
         ]
     },
@@ -392,7 +396,7 @@
         "g": "95c11e8432e62ddb",
         "group": "a37bc6ea16728bdb",
         "name": "Thông báo & Chuyển trang",
-        "order": 6,
+        "order": 5,
         "width": 0,
         "height": 0,
         "format": "<div style=\"text-align:center; font-size:20px; color:red;\">\n    <p id=\"success-msg\" style=\"display:none;\">✅ Vui lòng thoát sau khi dùng!</p>\n</div>\n\n<script>\n(function(scope) {\n    scope.$watch('msg.payload', function(payload) {\n        if (payload === 'redirect') {\n            document.getElementById('success-msg').style.display = 'block';\n            setTimeout(() => {\n                window.location.href = \"https://cisat.hcmute.edu.vn/\";\n            }, 100000);\n        } else {\n            document.getElementById('success-msg').style.display = 'none';\n        }\n    });\n})(scope);\n</script>",
@@ -507,7 +511,7 @@
         "name": "Gửi MQTT",
         "group": "5e497d8f50e6c2b1",
         "order": 1,
-        "width": 2,
+        "width": 3,
         "height": 1,
         "passthru": false,
         "label": "Thoát",
@@ -607,7 +611,7 @@
         "g": "8ae63e4ecefe3e73",
         "group": "a37bc6ea16728bdb",
         "name": "Thông báo & Chuyển trang",
-        "order": 7,
+        "order": 6,
         "width": 0,
         "height": 0,
         "format": "<div style=\"text-align:center; font-size:20px; color:green;\">\n    <p id=\"Change-msg\" style=\"display:none;\">✅ Đang chuyển trang...</p>\n</div>\n\n<script>\n(function(scope) {\n    scope.$watch('msg.payload', function(payload) {\n        if (payload === 'redirect') {\n            document.getElementById('Change-msg').style.display = 'block';\n            setTimeout(() => {\n                window.location.href = \"https://cisat.hcmute.edu.vn/\";\n            }, 2000);\n        } else {\n            document.getElementById('Change-msg').style.display = 'none';\n        }\n    });\n})(scope);\n</script>",
@@ -806,7 +810,7 @@
         "g": "8ae63e4ecefe3e73",
         "group": "5e497d8f50e6c2b1",
         "name": "Title MakerSpace",
-        "order": 3,
+        "order": 4,
         "width": 0,
         "height": 0,
         "format": "<div style=\"text-align: center; font-size: 24px; font-weight: bold; color: #007bff;\">\n  MakerSpace\n</div>",
@@ -868,9 +872,9 @@
         "z": "a26d5d20af5c6be2",
         "g": "8ae63e4ecefe3e73",
         "group": "5e497d8f50e6c2b1",
-        "order": 2,
-        "width": "6",
-        "height": "1",
+        "order": 3,
+        "width": 6,
+        "height": 1,
         "name": "Hiển thị thời gian",
         "label": "",
         "format": "{{msg.payload}}",
@@ -883,6 +887,58 @@
         "x": 750,
         "y": 1140,
         "wires": []
+    },
+    {
+        "id": "84625b7537e9088b",
+        "type": "function",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "name": "reset",
+        "func": "let input = \"\"; // hoặc: { payload: \"\" }\n\n// Xóa khỏi flow context\nflow.set(\"device_num\", \"\");\n\n\n// Trả về 2 output: 1 -> MQTT, 2 -> reset UI\nreturn [[{ payload: input }]];",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 380,
+        "wires": [
+            [
+                "e195bc4fc41f7e35"
+            ]
+        ]
+    },
+    {
+        "id": "260df5bc51bf776f",
+        "type": "function",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "name": "reset",
+        "func": "let input = \"\"; // hoặc: { payload: \"\" }\n\n// Xóa khỏi flow context\nflow.set(\"device_num\", \"\");\n\n\n// Trả về 2 output: 1 -> MQTT, 2 -> reset UI\nreturn [[{ payload: input }]];",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 580,
+        "wires": [
+            [
+                "d4d29464e556a853"
+            ]
+        ]
+    },
+    {
+        "id": "90a3f359b7e3b3f6",
+        "type": "ui_spacer",
+        "z": "a26d5d20af5c6be2",
+        "name": "spacer",
+        "group": "5e497d8f50e6c2b1",
+        "order": 2,
+        "width": 3,
+        "height": 1
     },
     {
         "id": "a37bc6ea16728bdb",
