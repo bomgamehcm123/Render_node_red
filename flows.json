@@ -300,7 +300,7 @@
         "z": "a26d5d20af5c6be2",
         "g": "95c11e8432e62ddb",
         "name": "OFF_GUEST",
-        "topic": "SV_OFF21146282",
+        "topic": "APP_OFF21146282",
         "qos": "0",
         "retain": "",
         "respTopic": "",
