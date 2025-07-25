@@ -30,7 +30,6 @@
             "cd41a8992a69f7a8",
             "467873c6577f297c",
             "9a445bfe1a10d69e",
-            "f5a944f8a5a713db",
             "2f76bcdca28c2d4a",
             "c895e9a2198c98ef",
             "4bfd39b34a79db2d",
@@ -39,12 +38,17 @@
             "fc2a31a8d88eb433",
             "84625b7537e9088b",
             "260df5bc51bf776f",
-            "53763511fc144e31"
+            "53763511fc144e31",
+            "a1a52ad3.f2aee8",
+            "b2f0fdde.88e3a",
+            "521aad049e2dd1f5",
+            "0b1b447ac6948cdb",
+            "f5a944f8a5a713db"
         ],
         "x": 54,
         "y": 159,
-        "w": 1032,
-        "h": 502
+        "w": 1012,
+        "h": 562
     },
     {
         "id": "8ae63e4ecefe3e73",
@@ -88,7 +92,7 @@
         "group": "a37bc6ea16728bdb",
         "order": 1,
         "width": 6,
-        "height": 2,
+        "height": 1,
         "passthru": true,
         "mode": "number",
         "delay": 0,
@@ -208,7 +212,7 @@
         "group": "a37bc6ea16728bdb",
         "order": 3,
         "width": 6,
-        "height": 2,
+        "height": 1,
         "passthru": true,
         "mode": "number",
         "delay": 0,
@@ -387,28 +391,6 @@
                 "467873c6577f297c",
                 "f5a944f8a5a713db"
             ]
-        ]
-    },
-    {
-        "id": "f5a944f8a5a713db",
-        "type": "ui_template",
-        "z": "a26d5d20af5c6be2",
-        "g": "95c11e8432e62ddb",
-        "group": "a37bc6ea16728bdb",
-        "name": "Thông báo & Chuyển trang",
-        "order": 5,
-        "width": 0,
-        "height": 0,
-        "format": "<div style=\"text-align:center; font-size:20px; color:red;\">\n    <p id=\"success-msg\" style=\"display:none;\">✅ Vui lòng thoát sau khi dùng!</p>\n</div>\n\n<script>\n(function(scope) {\n    scope.$watch('msg.payload', function(payload) {\n        if (payload === 'redirect') {\n            document.getElementById('success-msg').style.display = 'block';\n            setTimeout(() => {\n                window.location.href = \"https://node-red-on-render-pgsk.onrender.com/ui/\";\n            }, 300000);\n        } else {\n            document.getElementById('success-msg').style.display = 'none';\n        }\n    });\n})(scope);\n</script>",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 940,
-        "y": 400,
-        "wires": [
-            []
         ]
     },
     {
@@ -611,7 +593,7 @@
         "g": "8ae63e4ecefe3e73",
         "group": "a37bc6ea16728bdb",
         "name": "Thông báo & Chuyển trang",
-        "order": 6,
+        "order": 7,
         "width": 0,
         "height": 0,
         "format": "<div style=\"text-align:center; font-size:20px; color:green;\">\n    <p id=\"Change-msg\" style=\"display:none;\">✅ Đang chuyển trang...</p>\n</div>\n\n<script>\n(function(scope) {\n    scope.$watch('msg.payload', function(payload) {\n        if (payload === 'redirect') {\n            document.getElementById('Change-msg').style.display = 'block';\n            setTimeout(() => {\n                window.location.href = \"https://node-red-on-render-pgsk.onrender.com/ui/\";\n            }, 2000);\n        } else {\n            document.getElementById('Change-msg').style.display = 'none';\n        }\n    });\n})(scope);\n</script>",
@@ -713,7 +695,7 @@
         "z": "a26d5d20af5c6be2",
         "g": "8ae63e4ecefe3e73",
         "name": "Kiểm tra token",
-        "func": "// Parse token\nconst data = JSON.parse(msg.payload);\n\nconst currentToken = flow.get(\"currentToken\");\nconst tokenTimestamp = flow.get(\"tokenTimestamp\");\nconst now = new Date().getTime();\nconst threeMinutes = 5 * 60 * 1000;\n\nif (data.token) {\n    if (!currentToken || (now - tokenTimestamp > threeMinutes) || data.token !== currentToken) {\n        flow.set(\"currentToken\", data.token);\n        flow.set(\"tokenTimestamp\", now);\n        flow.set(\"allow\", true);\n    } else {\n        flow.set(\"allow\", true);\n    }\n} else {\n    flow.set(\"allow\", false);\n}\n\nreturn null;",
+        "func": "// Parse token\nconst data = JSON.parse(msg.payload);\n\nconst currentToken = flow.get(\"currentToken\");\nconst tokenTimestamp = flow.get(\"tokenTimestamp\");\nconst now = new Date().getTime();\nconst threeMinutes = 10 * 60 * 1000;\n\nif (data.token) {\n    if (!currentToken || (now - tokenTimestamp > threeMinutes) || data.token !== currentToken) {\n        flow.set(\"currentToken\", data.token);\n        flow.set(\"tokenTimestamp\", now);\n        flow.set(\"allow\", true);\n    } else {\n        flow.set(\"allow\", true);\n    }\n} else {\n    flow.set(\"allow\", false);\n}\n\nreturn null;",
         "outputs": 0,
         "timeout": "",
         "noerr": 0,
@@ -730,7 +712,7 @@
         "z": "a26d5d20af5c6be2",
         "g": "8ae63e4ecefe3e73",
         "name": "Kiểm tra hiệu lực",
-        "func": "const tokenTimestamp = flow.get(\"tokenTimestamp\") || 0;\nconst now = new Date().getTime();\nconst threeMinutes = 5 * 60 * 1000;\n\nif (now - tokenTimestamp > threeMinutes) {\n    flow.set(\"allow\", false);\n    return { payload: \"Hết quyền truy cập, vui lòng đăng nhập lại\" };\n}\n\nreturn null;",
+        "func": "const tokenTimestamp = flow.get(\"tokenTimestamp\") || 0;\nconst now = new Date().getTime();\nconst threeMinutes = 10 * 60 * 1000;\n\nif (now - tokenTimestamp > threeMinutes) {\n    flow.set(\"allow\", false);\n    return { payload: \"Hết quyền truy cập, vui lòng đăng nhập lại\" };\n}\n\nreturn null;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -1043,6 +1025,116 @@
         "className": "",
         "x": 1270,
         "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a1a52ad3.f2aee8",
+        "type": "ui_template",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "group": "a37bc6ea16728bdb",
+        "name": "Micro Input",
+        "order": 5,
+        "width": 6,
+        "height": 4,
+        "format": "<div\n  style=\"max-width: 400px; margin: 20px auto; text-align: center; font-family: 'Segoe UI', sans-serif; padding: 12px; border-radius: 12px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.08); background: #f9f9f9;\">\n\n  <button id=\"start-btn\" style=\"padding: 10px 20px; font-size: 16px; font-weight: bold; background-color: #4CAF50; color: white; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.15); transition: background-color 0.3s ease;\">\n    🎤 Nhấn để nói\n  </button>\n\n  <p id=\"result\" style=\"margin-top: 16px; font-size: 16px; color: green;\"></p>\n\n  <div style=\"margin-top: 16px; font-size: 14px; color: #555; line-height: 1.5;\">\n    <p><strong>Hãy nói rõ câu lệnh Bật/Tắt:</strong></p>\n    <p>👉 <b>\"Bật đèn 1\"</b> hoặc <b>\"Tắt đèn 2\"</b></p>\n  </div>\n</div>\n\n<script>\n  (function(scope) {\n    const btn = document.getElementById('start-btn');\n    const result = document.getElementById('result');\n\n    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;\n    const recognition = new SpeechRecognition();\n    recognition.lang = 'vi-VN';\n    recognition.interimResults = false;\n    recognition.maxAlternatives = 1;\n\n    btn.onclick = function () {\n      btn.innerText = \"🎙️ Đang nghe...\";\n      btn.style.backgroundColor = \"#888\";\n      btn.disabled = true;\n      recognition.start();\n    };\n\n    recognition.onsoundend = function () {\n      recognition.stop(); // Dừng ngay khi ngưng âm thanh\n    };\n\n    recognition.onresult = function (event) {\n      const transcript = event.results[0][0].transcript.trim().toLowerCase();\n\n      result.innerText = \"📢 Bạn nói: \" + transcript;\n      scope.send({ payload: transcript });\n\n      btn.disabled = false;\n      btn.innerText = \"🎤 Nhấn để nói\";\n      btn.style.backgroundColor = \"#4CAF50\";\n    };\n\n    recognition.onerror = function (event) {\n      result.innerText = \"❌ Lỗi: \" + event.error;\n      btn.disabled = false;\n      btn.innerText = \"🎤 Nhấn để nói\";\n      btn.style.backgroundColor = \"#4CAF50\";\n    };\n  })(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 410,
+        "y": 660,
+        "wires": [
+            [
+                "0b1b447ac6948cdb"
+            ]
+        ]
+    },
+    {
+        "id": "b2f0fdde.88e3a",
+        "type": "function",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "name": "Lấy số từ giọng nói Bật",
+        "func": "const text = msg.payload.toLowerCase();  // chuyển về chữ thường\n\n// Chỉ xử lý khi có chữ \"tắt\" hoặc \"tắc\"\nif (text.includes(\"bật\") || text.includes(\"mở\")) {\n    const matches = text.match(/\\d+/g); // tìm tất cả các số\n\n    if (matches && matches.length > 0) {\n        const messages = matches.map(number => {\n            return {\n                payload: {\n                    device: parseInt(number),\n                    Hour: 1\n                }\n            };\n        });\n\n        // Trả về nhiều tin nhắn (sử dụng node \"Split\" để tách hoặc return [msg1, msg2, ...])\n        return [messages];\n    }\n}\n\n// Nếu không có chữ \"tắt\" hoặc không có số thì bỏ qua\nreturn null;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 640,
+        "wires": [
+            [
+                "ee520d3d2efc4167"
+            ]
+        ]
+    },
+    {
+        "id": "521aad049e2dd1f5",
+        "type": "function",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "name": "Lấy số từ giọng nói Tắt",
+        "func": "const text = msg.payload.toLowerCase();  // chuyển về chữ thường\n\n// Chỉ xử lý khi có chữ \"tắt\" hoặc \"tắc\"\nif (text.includes(\"tắt\") || text.includes(\"tắc\")) {\n    const matches = text.match(/\\d+/g); // tìm tất cả các số\n\n    if (matches && matches.length > 0) {\n        const messages = matches.map(number => {\n            return {\n                payload: {\n                    device: parseInt(number),\n                    Hour: 1\n                }\n            };\n        });\n\n        // Trả về nhiều tin nhắn (sử dụng node \"Split\" để tách hoặc return [msg1, msg2, ...])\n        return [messages];\n    }\n}\n\n// Nếu không có chữ \"tắt\" hoặc không có số thì bỏ qua\nreturn null;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 680,
+        "wires": [
+            [
+                "f5270f2a13d6562f"
+            ]
+        ]
+    },
+    {
+        "id": "0b1b447ac6948cdb",
+        "type": "function",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "name": "Check quyền",
+        "func": "if (flow.get(\"allow\") === true) {\n    return msg;\n} else {\n    node.warn(\"Không có quyền sử dụng\");\n    return null;\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 620,
+        "wires": [
+            [
+                "b2f0fdde.88e3a",
+                "521aad049e2dd1f5"
+            ]
+        ]
+    },
+    {
+        "id": "f5a944f8a5a713db",
+        "type": "ui_template",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "group": "a37bc6ea16728bdb",
+        "name": "Thông báo & Chuyển trang",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "format": "<div style=\"text-align:center; font-size:20px; color:red;\">\n    <p id=\"success-msg\" style=\"display:none;\">✅ Vui lòng thoát sau khi dùng!</p>\n</div>\n\n<script>\n(function(scope) {\n    scope.$watch('msg.payload', function(payload) {\n        if (payload === 'redirect') {\n            document.getElementById('success-msg').style.display = 'block';\n            setTimeout(() => {\n                window.location.href = \"https://node-red-on-render-pgsk.onrender.com/ui/\";\n            }, 300000);\n        } else {\n            document.getElementById('success-msg').style.display = 'none';\n        }\n    });\n})(scope);\n</script>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 860,
+        "y": 400,
         "wires": [
             []
         ]
