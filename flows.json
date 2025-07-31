@@ -75,11 +75,14 @@
             "token_checker",
             "token_valid_checker",
             "check_interval",
-            "7e233b7924eb3376"
+            "7e233b7924eb3376",
+            "fa59e7eb9174807f",
+            "aa6e44bc878f39db",
+            "3b8ecc04604307d1"
         ],
         "x": 124,
         "y": 699,
-        "w": 932,
+        "w": 1042,
         "h": 442
     },
     {
@@ -832,7 +835,7 @@
         "z": "a26d5d20af5c6be2",
         "name": "",
         "group": "5e497d8f50e6c2b1",
-        "order": 4,
+        "order": 5,
         "width": 3,
         "height": 1,
         "passthru": false,
@@ -860,7 +863,7 @@
         "z": "a26d5d20af5c6be2",
         "name": "",
         "group": "5e497d8f50e6c2b1",
-        "order": 5,
+        "order": 6,
         "width": 3,
         "height": 1,
         "passthru": false,
@@ -889,7 +892,7 @@
         "g": "95c11e8432e62ddb",
         "group": "5e497d8f50e6c2b1",
         "name": "Title MakerSpace",
-        "order": 3,
+        "order": 4,
         "width": 0,
         "height": 0,
         "format": "<div style=\"text-align: center; font-size: 24px; font-weight: bold; color: #007bff;\">\n  MAKERSPACE\n</div>",
@@ -1198,7 +1201,7 @@
         "z": "a26d5d20af5c6be2",
         "group": "5e497d8f50e6c2b1",
         "name": "Light Status Card",
-        "order": 6,
+        "order": 7,
         "width": 0,
         "height": 0,
         "format": "<div style=\"padding:10px; border-radius: 8px; background-color: {{msg.payload.color}}; color: white;\">\n    <b>{{msg.payload.label}}</b><br>\n    Trạng thái: {{msg.payload.status}}\n</div>",
@@ -1444,6 +1447,69 @@
                 "ee2daf0403a325bc"
             ]
         ]
+    },
+    {
+        "id": "fa59e7eb9174807f",
+        "type": "inject",
+        "z": "a26d5d20af5c6be2",
+        "g": "8ae63e4ecefe3e73",
+        "name": "Lặp mỗi giây",
+        "props": [],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.1",
+        "topic": "",
+        "x": 660,
+        "y": 920,
+        "wires": [
+            [
+                "aa6e44bc878f39db"
+            ]
+        ]
+    },
+    {
+        "id": "aa6e44bc878f39db",
+        "type": "function",
+        "z": "a26d5d20af5c6be2",
+        "g": "8ae63e4ecefe3e73",
+        "name": "Lấy giờ Việt Nam",
+        "func": "let now = new Date();\n\n// Cộng thêm 7 tiếng để ra giờ Việt Nam\nnow.setHours(now.getHours() + 7);\n\nlet gio = now.getHours().toString().padStart(2, '0');\nlet phut = now.getMinutes().toString().padStart(2, '0');\nlet giay = now.getSeconds().toString().padStart(2, '0');\n\nlet ngay = now.getDate().toString().padStart(2, '0');\nlet thang = (now.getMonth() + 1).toString().padStart(2, '0');\nlet nam = now.getFullYear();\n\nmsg.payload = `🕒 ${gio}:${phut}:${giay} | 📅 ${ngay}/${thang}/${nam}`;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 920,
+        "wires": [
+            [
+                "3b8ecc04604307d1"
+            ]
+        ]
+    },
+    {
+        "id": "3b8ecc04604307d1",
+        "type": "ui_text",
+        "z": "a26d5d20af5c6be2",
+        "g": "8ae63e4ecefe3e73",
+        "group": "5e497d8f50e6c2b1",
+        "order": 3,
+        "width": 6,
+        "height": 1,
+        "name": "Hiển thị thời gian",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1050,
+        "y": 920,
+        "wires": []
     },
     {
         "id": "db456837885faf52",
