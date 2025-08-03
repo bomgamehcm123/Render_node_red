@@ -17,14 +17,10 @@
             "label": true
         },
         "nodes": [
-            "e195bc4fc41f7e35",
             "cc702b49a4f030e6",
-            "a33bb55a4ff8b5a1",
             "7114ca96d190bebf",
             "ee520d3d2efc4167",
-            "d4d29464e556a853",
             "23e809d9d0d641c7",
-            "4b6605032728b106",
             "9ffd8c502d885165",
             "f5270f2a13d6562f",
             "cd41a8992a69f7a8",
@@ -36,22 +32,41 @@
             "bbb3c014b2e2a32f",
             "3b590e948ed9e709",
             "fc2a31a8d88eb433",
-            "a1a52ad3.f2aee8",
             "b2f0fdde.88e3a",
             "521aad049e2dd1f5",
             "0b1b447ac6948cdb",
-            "f5a944f8a5a713db",
-            "3bb65ba23dd53f71",
             "7b28aab10d0188a2",
             "43501d8977078db0",
             "9cf6f795721eadab",
             "a430144759d3ba75",
-            "b43bb183fbe5b482"
+            "b43bb183fbe5b482",
+            "modern_ui_input_button",
+            "0d56fe0a123fe9f3",
+            "245d57a70f155957",
+            "27496b907f4d1829",
+            "aa6b3cbf89643be1",
+            "mqtt_in_light_status",
+            "3f49fd82910bc083",
+            "0b39586c86bd7f31",
+            "51ff49c6f7a3cd55",
+            "e75f84680a2b8c83",
+            "fdbf92184111d1ef",
+            "e4c1d9958ddb7d4b",
+            "ee2daf0403a325bc",
+            "tmpl_guides",
+            "bf26a824d4fe9a56",
+            "c49751b87ec2bc15",
+            "f1aabc1e.b1c59",
+            "bdde4fc2.a51e3",
+            "7b452728.b85e28",
+            "95f15cbb8646566f",
+            "45ae5c22d2e4c829",
+            "8295b351820520ca"
         ],
-        "x": 54,
-        "y": 159,
-        "w": 1232,
-        "h": 562
+        "x": 4,
+        "y": 119,
+        "w": 1382,
+        "h": 882
     },
     {
         "id": "8ae63e4ecefe3e73",
@@ -63,11 +78,6 @@
             "label": true
         },
         "nodes": [
-            "67712cfd66ac5721",
-            "9b2bfeb103a0616c",
-            "a4b59dfee4e7666a",
-            "64b4d1920fc579e3",
-            "1c5c66c4f01e2b0f",
             "35a1ec46f94a9eb2",
             "5fe9244ff0019e1e",
             "ui_notify",
@@ -76,39 +86,16 @@
             "check_interval",
             "7e233b7924eb3376",
             "fa59e7eb9174807f",
-            "aa6e44bc878f39db"
+            "aa6e44bc878f39db",
+            "76b8b9c0526a8085",
+            "61137f59bdcbeaba",
+            "30878c06314a1932",
+            "1071b37d9e248f42"
         ],
-        "x": 124,
-        "y": 699,
-        "w": 932,
-        "h": 442
-    },
-    {
-        "id": "e195bc4fc41f7e35",
-        "type": "ui_text_input",
-        "z": "a26d5d20af5c6be2",
-        "g": "95c11e8432e62ddb",
-        "name": "Nhập số đèn",
-        "label": "         Số đèn (1–70)",
-        "tooltip": "Nhập đèn cần bật ( Không giới hạn) ",
-        "group": "a37bc6ea16728bdb",
-        "order": 1,
-        "width": 6,
-        "height": 1,
-        "passthru": true,
-        "mode": "number",
-        "delay": 0,
-        "topic": "input",
-        "sendOnBlur": true,
-        "className": "",
-        "topicType": "str",
-        "x": 150,
-        "y": 200,
-        "wires": [
-            [
-                "cc702b49a4f030e6"
-            ]
-        ]
+        "x": 4,
+        "y": 1319,
+        "w": 1082,
+        "h": 382
     },
     {
         "id": "cc702b49a4f030e6",
@@ -125,39 +112,10 @@
                 "tot": "msg"
             }
         ],
-        "x": 420,
-        "y": 200,
+        "x": 410,
+        "y": 160,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "a33bb55a4ff8b5a1",
-        "type": "ui_button",
-        "z": "a26d5d20af5c6be2",
-        "g": "95c11e8432e62ddb",
-        "name": "Gửi MQTT",
-        "group": "a37bc6ea16728bdb",
-        "order": 2,
-        "width": 6,
-        "height": 1,
-        "passthru": false,
-        "label": "Bật đèn",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "Green",
-        "className": "",
-        "icon": "send",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "",
-        "topicType": "str",
-        "x": 150,
-        "y": 260,
-        "wires": [
-            [
-                "3b590e948ed9e709"
-            ]
         ]
     },
     {
@@ -173,14 +131,15 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
-        "y": 260,
+        "x": 400,
+        "y": 220,
         "wires": [
             [
                 "ee520d3d2efc4167",
                 "4bfd39b34a79db2d",
                 "bbb3c014b2e2a32f",
-                "a430144759d3ba75"
+                "a430144759d3ba75",
+                "fdbf92184111d1ef"
             ]
         ]
     },
@@ -199,36 +158,9 @@
         "correl": "",
         "expiry": "",
         "broker": "37fcf5bfccf8b220",
-        "x": 590,
-        "y": 260,
+        "x": 580,
+        "y": 220,
         "wires": []
-    },
-    {
-        "id": "d4d29464e556a853",
-        "type": "ui_text_input",
-        "z": "a26d5d20af5c6be2",
-        "g": "95c11e8432e62ddb",
-        "name": "Nhập số đèn",
-        "label": "         Số đèn (1–70)",
-        "tooltip": "Nhập đèn cần tắt",
-        "group": "a37bc6ea16728bdb",
-        "order": 3,
-        "width": 6,
-        "height": 1,
-        "passthru": true,
-        "mode": "number",
-        "delay": 0,
-        "topic": "input",
-        "sendOnBlur": true,
-        "className": "",
-        "topicType": "str",
-        "x": 210,
-        "y": 460,
-        "wires": [
-            [
-                "23e809d9d0d641c7"
-            ]
-        ]
     },
     {
         "id": "23e809d9d0d641c7",
@@ -245,39 +177,10 @@
                 "tot": "msg"
             }
         ],
-        "x": 420,
-        "y": 460,
+        "x": 410,
+        "y": 420,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "4b6605032728b106",
-        "type": "ui_button",
-        "z": "a26d5d20af5c6be2",
-        "g": "95c11e8432e62ddb",
-        "name": "Gửi MQTT",
-        "group": "a37bc6ea16728bdb",
-        "order": 4,
-        "width": 6,
-        "height": 1,
-        "passthru": false,
-        "label": "Tắt đèn",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "red",
-        "className": "",
-        "icon": "send",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "",
-        "topicType": "str",
-        "x": 170,
-        "y": 540,
-        "wires": [
-            [
-                "fc2a31a8d88eb433"
-            ]
         ]
     },
     {
@@ -293,8 +196,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 350,
-        "y": 540,
+        "x": 340,
+        "y": 500,
         "wires": [
             [
                 "f5270f2a13d6562f",
@@ -319,8 +222,8 @@
         "correl": "",
         "expiry": "",
         "broker": "37fcf5bfccf8b220",
-        "x": 620,
-        "y": 520,
+        "x": 610,
+        "y": 480,
         "wires": []
     },
     {
@@ -338,11 +241,11 @@
                 "tot": "str"
             }
         ],
-        "x": 830,
-        "y": 560,
+        "x": 820,
+        "y": 520,
         "wires": [
             [
-                "f5a944f8a5a713db"
+                "8295b351820520ca"
             ]
         ]
     },
@@ -363,8 +266,8 @@
         "randomUnits": "seconds",
         "allowrate": false,
         "outputs": 1,
-        "x": 830,
-        "y": 480,
+        "x": 820,
+        "y": 440,
         "wires": [
             [
                 "cd41a8992a69f7a8"
@@ -387,11 +290,11 @@
             }
         ],
         "x": 630,
-        "y": 480,
+        "y": 440,
         "wires": [
             [
                 "467873c6577f297c",
-                "f5a944f8a5a713db"
+                "8295b351820520ca"
             ]
         ]
     },
@@ -410,11 +313,11 @@
                 "tot": "str"
             }
         ],
-        "x": 770,
-        "y": 300,
+        "x": 760,
+        "y": 260,
         "wires": [
             [
-                "f5a944f8a5a713db"
+                "8295b351820520ca"
             ]
         ]
     },
@@ -435,8 +338,8 @@
         "randomUnits": "seconds",
         "allowrate": false,
         "outputs": 1,
-        "x": 830,
-        "y": 200,
+        "x": 820,
+        "y": 160,
         "wires": [
             [
                 "2f76bcdca28c2d4a"
@@ -458,12 +361,12 @@
                 "tot": "str"
             }
         ],
-        "x": 610,
-        "y": 200,
+        "x": 600,
+        "y": 160,
         "wires": [
             [
                 "c895e9a2198c98ef",
-                "f5a944f8a5a713db"
+                "8295b351820520ca"
             ]
         ]
     },
@@ -483,132 +386,9 @@
         "className": "",
         "topic": "Điều khiển thành công",
         "name": "Thông báo thành công",
-        "x": 620,
-        "y": 380,
+        "x": 680,
+        "y": 340,
         "wires": []
-    },
-    {
-        "id": "9b2bfeb103a0616c",
-        "type": "ui_button",
-        "z": "a26d5d20af5c6be2",
-        "g": "8ae63e4ecefe3e73",
-        "name": "Gửi MQTT",
-        "group": "5e497d8f50e6c2b1",
-        "order": 1,
-        "width": 3,
-        "height": 1,
-        "passthru": false,
-        "label": "Đăng xuất",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "send",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "",
-        "topicType": "str",
-        "x": 240,
-        "y": 760,
-        "wires": [
-            [
-                "a4b59dfee4e7666a"
-            ]
-        ]
-    },
-    {
-        "id": "a4b59dfee4e7666a",
-        "type": "change",
-        "z": "a26d5d20af5c6be2",
-        "g": "8ae63e4ecefe3e73",
-        "name": "Set redirect",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "redirect",
-                "tot": "str"
-            }
-        ],
-        "x": 450,
-        "y": 740,
-        "wires": [
-            [
-                "67712cfd66ac5721",
-                "1c5c66c4f01e2b0f"
-            ]
-        ]
-    },
-    {
-        "id": "67712cfd66ac5721",
-        "type": "delay",
-        "z": "a26d5d20af5c6be2",
-        "g": "8ae63e4ecefe3e73",
-        "name": "Delay xóa redirect",
-        "pauseType": "delay",
-        "timeout": "3",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "",
-        "randomLast": "",
-        "randomUnits": "seconds",
-        "allowrate": false,
-        "outputs": 1,
-        "x": 670,
-        "y": 740,
-        "wires": [
-            [
-                "64b4d1920fc579e3"
-            ]
-        ]
-    },
-    {
-        "id": "64b4d1920fc579e3",
-        "type": "change",
-        "z": "a26d5d20af5c6be2",
-        "g": "8ae63e4ecefe3e73",
-        "name": "Xóa redirect",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "idle",
-                "tot": "str"
-            }
-        ],
-        "x": 650,
-        "y": 820,
-        "wires": [
-            [
-                "1c5c66c4f01e2b0f"
-            ]
-        ]
-    },
-    {
-        "id": "1c5c66c4f01e2b0f",
-        "type": "ui_template",
-        "z": "a26d5d20af5c6be2",
-        "g": "8ae63e4ecefe3e73",
-        "group": "a37bc6ea16728bdb",
-        "name": "Thông báo & Chuyển trang",
-        "order": 8,
-        "width": 0,
-        "height": 0,
-        "format": "<div style=\"text-align:center; font-size:20px; color:green;\">\n    <p id=\"Change-msg\" style=\"display:none;\">✅ Đang chuyển trang...</p>\n</div>\n\n<script>\n(function(scope) {\n    scope.$watch('msg.payload', function(payload) {\n        if (payload === 'redirect') {\n            document.getElementById('Change-msg').style.display = 'block';\n            setTimeout(() => {\n                window.location.href = \"https://node-red-on-render-pgsk.onrender.com/ui/\";\n            }, 2000);\n        } else {\n            document.getElementById('Change-msg').style.display = 'none';\n        }\n    });\n})(scope);\n</script>",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 910,
-        "y": 840,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "35a1ec46f94a9eb2",
@@ -623,8 +403,8 @@
         "nl": false,
         "rap": false,
         "inputs": 0,
-        "x": 240,
-        "y": 980,
+        "x": 120,
+        "y": 1420,
         "wires": [
             [
                 "5fe9244ff0019e1e",
@@ -645,8 +425,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 420,
-        "y": 920,
+        "x": 300,
+        "y": 1360,
         "wires": []
     },
     {
@@ -662,8 +442,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 290,
-        "y": 320,
+        "x": 340,
+        "y": 300,
         "wires": [
             [
                 "7114ca96d190bebf"
@@ -683,8 +463,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 290,
-        "y": 620,
+        "x": 280,
+        "y": 580,
         "wires": [
             [
                 "9ffd8c502d885165"
@@ -704,8 +484,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 440,
-        "y": 980,
+        "x": 320,
+        "y": 1420,
         "wires": []
     },
     {
@@ -714,19 +494,20 @@
         "z": "a26d5d20af5c6be2",
         "g": "8ae63e4ecefe3e73",
         "name": "Kiểm tra hiệu lực",
-        "func": "const tokenTimestamp = flow.get(\"tokenTimestamp\") || 0;\nconst now = new Date().getTime();\nconst threeMinutes = 10 * 60 * 1000;\n\nif (now - tokenTimestamp > threeMinutes) {\n    flow.set(\"allow\", false);\n    return { payload: \"Hết quyền truy cập, vui lòng đăng nhập lại\" };\n}\n\nreturn null;",
+        "func": "const tokenTimestamp = flow.get(\"tokenTimestamp\") || 0;\nconst now = new Date().getTime();\nconst threeMinutes = 10 * 60 * 1000;\n\nif (now - tokenTimestamp > threeMinutes) {\n    flow.set(\"allow\", false);\n    return { payload: \"redirect\" };\n}\n\nreturn null;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 590,
-        "y": 1080,
+        "x": 470,
+        "y": 1520,
         "wires": [
             [
                 "ui_notify",
-                "7e233b7924eb3376"
+                "7e233b7924eb3376",
+                "61137f59bdcbeaba"
             ]
         ]
     },
@@ -737,13 +518,13 @@
         "g": "8ae63e4ecefe3e73",
         "name": "Check token mỗi 10s",
         "props": [],
-        "repeat": "10",
+        "repeat": "5",
         "crontab": "",
         "once": true,
         "onceDelay": "1",
         "topic": "",
-        "x": 360,
-        "y": 1080,
+        "x": 240,
+        "y": 1520,
         "wires": [
             [
                 "token_valid_checker"
@@ -755,7 +536,7 @@
         "type": "ui_toast",
         "z": "a26d5d20af5c6be2",
         "g": "8ae63e4ecefe3e73",
-        "position": "top right",
+        "position": "bottom right",
         "displayTime": "5",
         "highlight": "",
         "sendall": true,
@@ -767,7 +548,7 @@
         "topic": "",
         "name": "Thông báo UI",
         "x": 800,
-        "y": 1100,
+        "y": 1600,
         "wires": []
     },
     {
@@ -783,93 +564,43 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 780,
-        "y": 1040,
+        "x": 620,
+        "y": 1660,
         "wires": []
     },
     {
         "id": "ee2daf0403a325bc",
         "type": "ui_ui_control",
         "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "name": "",
         "events": "all",
-        "x": 1520,
-        "y": 700,
+        "x": 1260,
+        "y": 840,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "bf8b7705e49827d0",
-        "type": "ui_button",
-        "z": "a26d5d20af5c6be2",
-        "name": "",
-        "group": "5e497d8f50e6c2b1",
-        "order": 2,
-        "width": 3,
-        "height": 1,
-        "passthru": false,
-        "label": "Hướng dẫn",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "{\"tab\":\"Hướng dẫn\"}",
-        "payloadType": "json",
-        "topic": "",
-        "topicType": "str",
-        "x": 1690,
-        "y": 720,
-        "wires": [
-            [
-                "ee2daf0403a325bc"
-            ]
         ]
     },
     {
         "id": "tmpl_guides",
         "type": "ui_template",
         "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "group": "group_guides",
         "name": "Trang Hướng dẫn",
         "order": 1,
         "width": 7,
         "height": 18,
-        "format": "<style>\n  .guide-box {\n    padding: 20px;\n    font-family: 'Segoe UI', sans-serif;\n    line-height: 1.6;\n    border: 1px solid #ccc;\n    border-radius: 10px;\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);\n    background-color: #fdfdfd;\n    margin-bottom: 20px;\n  }\n\n  .guide-box h2 {\n    color: #0066cc;\n    margin-bottom: 10px;\n  }\n\n  .guide-box h3 {\n    margin-top: 20px;\n    color: #444;\n  }\n\n  .guide-box ul {\n    padding-left: 20px;\n  }\n\n  .highlight {\n    color: #c33;\n    font-weight: bold;\n  }\n</style>\n\n<div class=\"guide-box\">\n  <h2>Chào mừng đến với Trung tâm Sáng tạo Khởi nghiệp &amp; Chuyển giao Công nghệ (MakerSpace)</h2>\n  <p>Nơi sinh viên có thể nghiên cứu, học tập và trải nghiệm thực tiễn trong môi trường sáng tạo, hiện đại.</p>\n\n  <h3>1. Đối tượng người dùng</h3>\n  <ul>\n    <li><b>Sinh viên chưa đăng ký</b>: Sinh viên tham quan, học tập.</li>\n    <li><b>Đối tượng đã đăng ký</b>: Nhóm sinh viên, Giảng viên làm việc.</li>\n    <li><b>Bảo mật</b>: Bộ phận quản lý, toàn quyền hệ thống.</li>\n  </ul>\n\n  <h3>2. Tài khoản &amp; Bảo mật</h3>\n  <ul>\n    <li><span class=\"highlight\">Đăng ký tài khoản qua bộ phận quản lý CISAT</span>.</li>\n    <li><b>Sinh viên chưa đăng ký</b>: Điều khiển trực tiếp (1 đèn - 1 giờ).</li>\n    <li><b>Sinh viên đã đăng ký</b>: Không giới hạn đèn <span class=\"highlight\">(Email@student.hcmute.edu.vn)</span>.\n    </li>\n    <li><b>Giảng viên đã đăng ký</b>: Không giới hạn thiết bị <span class=\"highlight\">(Email@hcmute.edu.vn)</span>.</li>\n    <li><b>Admin</b>: Sử dụng email được cấp sẵn.</li>\n    <li>Mật khẩu &ge; 6 ký tự. Quên mật khẩu → liên hệ Admin.</li>\n  </ul>\n\n  <h3>3. Lưu ý khi sử dụng</h3>\n  <ul>\n    <li>Guest có thể xin thêm thời gian sử dụng đèn.</li>\n    <li>Tắt đèn/quạt sau khi dùng (trừ khi tự động).</li>\n    <li>Mọi thắc mắc, liên hệ bộ phận kỹ thuật.</li>\n  </ul>\n</div>",
+        "format": "<link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap\" rel=\"stylesheet\" />\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n\n<style>\n  body {\n    background-color: #f5f7fa;\n    margin: 0;\n    font-family: 'Inter', sans-serif;\n    color: #333;\n    animation: fadeIn 0.6s ease-in-out;\n    padding: 12px;\n  }\n\n  @keyframes fadeIn {\n    from {\n      opacity: 0;\n      transform: translateY(16px);\n    }\n\n    to {\n      opacity: 1;\n      transform: translateY(0);\n    }\n  }\n\n  @keyframes softGlow {\n    0% {\n      box-shadow: 0 0 6px #00e5ff66, 0 0 12px #00e5ff33;\n      border-color: #00e5ff66;\n    }\n\n    25% {\n      box-shadow: 0 0 6px #ff00ff66, 0 0 12px #ff00ff33;\n      border-color: #ff00ff66;\n    }\n\n    50% {\n      box-shadow: 0 0 6px #00ff9966, 0 0 12px #00ff9933;\n      border-color: #00ff9966;\n    }\n\n    75% {\n      box-shadow: 0 0 6px #9966ff66, 0 0 12px #9966ff33;\n      border-color: #9966ff66;\n    }\n\n    100% {\n      box-shadow: 0 0 6px #00e5ff66, 0 0 12px #00e5ff33;\n      border-color: #00e5ff66;\n    }\n  }\n\n  .guide-box {\n    background: #ffffff;\n    border-radius: 16px;\n    padding: 20px;\n    border: 2px solid #00e5ff44;\n    animation: softGlow 8s infinite ease-in-out;\n    box-sizing: border-box;\n  }\n\n  .guide-box h2 {\n    color: #1976d2;\n    font-size: 22px;\n    margin-bottom: 12px;\n    text-align: center;\n    font-weight: 600;\n  }\n\n  .guide-box h3 {\n    font-size: 18px;\n    color: #444;\n    margin-top: 20px;\n    margin-bottom: 8px;\n  }\n\n  .guide-box p {\n    font-size: 15px;\n    line-height: 1.6;\n    margin: 8px 0;\n  }\n\n  .guide-box ul {\n    padding-left: 20px;\n    margin-top: 6px;\n    margin-bottom: 12px;\n  }\n\n  .guide-box ul li {\n    font-size: 15px;\n    margin-bottom: 6px;\n  }\n\n  .highlight {\n    color: #c62828;\n    font-weight: 600;\n  }\n\n  @media (max-width: 480px) {\n    .guide-box {\n      padding: 16px;\n    }\n\n    .guide-box h2 {\n      font-size: 20px;\n    }\n\n    .guide-box h3 {\n      font-size: 16px;\n    }\n\n    .guide-box p,\n    .guide-box ul li {\n      font-size: 14px;\n    }\n  }\n</style>\n\n<div class=\"guide-box\">\n  <h2>Chào mừng đến với MakerSpace</h2>\n  <p>Nơi sinh viên có thể nghiên cứu, học tập và trải nghiệm thực tiễn trong môi trường sáng tạo, hiện đại.</p>\n\n  <h3>1. Đối tượng người dùng</h3>\n  <ul>\n    <li><b>Sinh viên chưa đăng ký</b>: Sinh viên tham quan, học tập.</li>\n    <li><b>Đối tượng đã đăng ký</b>: Nhóm sinh viên, Giảng viên làm việc.</li>\n    <li><b>Bảo mật</b>: Bộ phận quản lý, toàn quyền hệ thống.</li>\n  </ul>\n\n  <h3>2. Tài khoản &amp; Bảo mật</h3>\n  <ul>\n    <li><span class=\"highlight\">Đăng ký tài khoản qua bộ phận quản lý CISAT</span>.</li>\n    <li><b>Sinh viên chưa đăng ký</b>: Điều khiển trực tiếp (1 đèn - 1 giờ).</li>\n    <li><b>Sinh viên đã đăng ký</b>: Không giới hạn đèn <span class=\"highlight\">(Email@student.hcmute.edu.vn)</span>.\n    </li>\n    <li><b>Giảng viên đã đăng ký</b>: Không giới hạn thiết bị <span class=\"highlight\">(Email@hcmute.edu.vn)</span>.</li>\n    <li><b>Admin</b>: Sử dụng email được cấp sẵn.</li>\n    <li>Mật khẩu &ge; 6 ký tự. Quên mật khẩu → liên hệ Admin.</li>\n  </ul>\n\n  <h3>3. Lưu ý khi sử dụng</h3>\n  <ul>\n    <li>Guest có thể xin thêm thời gian sử dụng đèn.</li>\n    <li>Tắt đèn/quạt sau khi dùng (trừ khi tự động).</li>\n    <li>Mọi thắc mắc, liên hệ bộ phận kỹ thuật.</li>\n  </ul>\n</div>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": false,
         "templateScope": "local",
         "className": "",
-        "x": 1570,
-        "y": 640,
+        "x": 1270,
+        "y": 720,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "a1a52ad3.f2aee8",
-        "type": "ui_template",
-        "z": "a26d5d20af5c6be2",
-        "g": "95c11e8432e62ddb",
-        "group": "a37bc6ea16728bdb",
-        "name": "Micro Input",
-        "order": 5,
-        "width": 6,
-        "height": 3,
-        "format": "<div style=\"\n  max-width: 400px;\n  margin: 20px auto;\n  text-align: center;\n  font-family: 'Segoe UI', sans-serif;\n  padding: 12px;\n  border-radius: 12px;\n  border: 1px solid #ccc;\n  box-shadow: 0 2px 8px rgba(0,0,0,0.08);\n  background: #f9f9f9;\">\n\n  <button id=\"start-btn\" style=\"\n    padding: 10px 20px;\n    font-size: 16px;\n    font-weight: bold;\n    background-color: #4CAF50;\n    color: white;\n    border: none;\n    border-radius: 8px;\n    cursor: pointer;\n    box-shadow: 0 2px 5px rgba(0,0,0,0.15);\n    transition: background-color 0.3s ease;\">\n    🎤 Nhấn để nói\n  </button>\n\n  <p id=\"result\" style=\"margin-top: 16px; font-size: 16px; color: green;\"></p>\n\n  <div style=\"margin-top: 16px; font-size: 14px; color: #555; line-height: 1.5;\">\n    <p><strong>Hãy nói rõ câu lệnh Bật/Tắt Đèn:</strong></p>\n    <p>👉 <b>\"Bật đèn 1\"</b> hoặc <b>\"Tắt đèn 2,3\"</b></p>\n  </div>\n</div>\n\n<script>\n  (function(scope) {\n    const btn = document.getElementById('start-btn');\n    const result = document.getElementById('result');\n\n    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;\n    const recognition = new SpeechRecognition();\n\n    recognition.lang = 'vi-VN';\n    recognition.interimResults = false;\n    recognition.maxAlternatives = 1;\n    recognition.continuous = false;\n\n    btn.onclick = function () {\n      btn.innerText = \"🎙️ Đang nghe...\";\n      btn.style.backgroundColor = \"#888\";\n      btn.disabled = true;\n      recognition.start();\n    };\n\n    recognition.onspeechend = function () {\n      recognition.stop(); // Dừng ngay sau khi hết nói\n    };\n\n    recognition.onresult = function (event) {\n      const transcript = event.results[event.resultIndex][0].transcript.trim().toLowerCase();\n      result.innerText = \"📢 Bạn nói: \" + transcript;\n      scope.send({ payload: transcript });\n\n      btn.disabled = false;\n      btn.innerText = \"🎤 Nhấn để nói\";\n      btn.style.backgroundColor = \"#4CAF50\";\n    };\n\n    recognition.onerror = function (event) {\n      result.innerText = \"❌ Lỗi: \" + event.error;\n      btn.disabled = false;\n      btn.innerText = \"🎤 Nhấn để nói\";\n      btn.style.backgroundColor = \"#4CAF50\";\n    };\n  })(scope);\n</script>",
-        "storeOutMessages": true,
-        "fwdInMessages": false,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 410,
-        "y": 660,
-        "wires": [
-            [
-                "0b1b447ac6948cdb"
-            ]
         ]
     },
     {
@@ -885,11 +616,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 810,
-        "y": 640,
+        "x": 800,
+        "y": 580,
         "wires": [
             [
-                "ee520d3d2efc4167"
+                "ee520d3d2efc4167",
+                "7b452728.b85e28"
             ]
         ]
     },
@@ -906,11 +638,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 800,
-        "y": 680,
+        "x": 770,
+        "y": 640,
         "wires": [
             [
-                "f5270f2a13d6562f"
+                "f5270f2a13d6562f",
+                "7b452728.b85e28"
             ]
         ]
     },
@@ -927,57 +660,14 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 590,
-        "y": 660,
+        "x": 420,
+        "y": 640,
         "wires": [
             [
                 "b2f0fdde.88e3a",
                 "521aad049e2dd1f5",
-                "3bb65ba23dd53f71",
-                "9cf6f795721eadab"
-            ]
-        ]
-    },
-    {
-        "id": "f5a944f8a5a713db",
-        "type": "ui_template",
-        "z": "a26d5d20af5c6be2",
-        "g": "95c11e8432e62ddb",
-        "group": "a37bc6ea16728bdb",
-        "name": "Thông báo & Chuyển trang",
-        "order": 7,
-        "width": 0,
-        "height": 0,
-        "format": "<div style=\"text-align:center; font-size:20px; color:red;\">\n    <p id=\"success-msg\" style=\"display:none;\">✅ Vui lòng thoát sau khi dùng!</p>\n</div>\n\n<script>\n(function(scope) {\n    scope.$watch('msg.payload', function(payload) {\n        if (payload === 'redirect') {\n            document.getElementById('success-msg').style.display = 'block';\n            setTimeout(() => {\n                window.location.href = \"https://render-node-red-uno2.onrender.com/ui/\";\n            }, 00);\n        } else {\n            document.getElementById('success-msg').style.display = 'none';\n        }\n    });\n})(scope);\n</script>",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 920,
-        "y": 380,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3bb65ba23dd53f71",
-        "type": "function",
-        "z": "a26d5d20af5c6be2",
-        "g": "95c11e8432e62ddb",
-        "name": "Lấy số từ giọng nói tắt",
-        "func": "const text = msg.payload.toLowerCase();\n\n// Kiểm tra các từ khóa chỉ toàn bộ\nconst tatHet = text.includes(\"tắt hết\") || text.includes(\"tắt tất cả\") || text.includes(\"tắt toàn bộ\");\n\nif (tatHet) {\n    // Danh sách các thiết bị giả sử là 1 -> 3\n    const allDevices = Array.from({ length: 70 }, (_, index) => index + 1);\n\n    const messages = allDevices.map(number => ({\n        payload: {\n            device: number,\n            Hour: 1\n        }\n    }));\n\n    return [messages];\n}\n\n\n\nreturn null;\n",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1060,
-        "y": 660,
-        "wires": [
-            [
-                "7b28aab10d0188a2"
+                "9cf6f795721eadab",
+                "245d57a70f155957"
             ]
         ]
     },
@@ -996,8 +686,8 @@
         "correl": "",
         "expiry": "",
         "broker": "37fcf5bfccf8b220",
-        "x": 1170,
-        "y": 680,
+        "x": 1160,
+        "y": 640,
         "wires": []
     },
     {
@@ -1015,8 +705,8 @@
         "correl": "",
         "expiry": "",
         "broker": "37fcf5bfccf8b220",
-        "x": 1130,
-        "y": 420,
+        "x": 1120,
+        "y": 380,
         "wires": []
     },
     {
@@ -1032,8 +722,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 900,
-        "y": 420,
+        "x": 890,
+        "y": 380,
         "wires": [
             [
                 "43501d8977078db0"
@@ -1044,6 +734,7 @@
         "id": "mqtt_in_light_status",
         "type": "mqtt in",
         "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "name": "MQTT Đèn",
         "topic": "STATUS_21146282",
         "qos": "0",
@@ -1053,8 +744,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 1240,
-        "y": 920,
+        "x": 90,
+        "y": 860,
         "wires": [
             [
                 "3f49fd82910bc083"
@@ -1081,12 +772,13 @@
         "id": "3f49fd82910bc083",
         "type": "json",
         "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "name": "Parse JSON",
         "property": "payload",
         "action": "",
         "pretty": false,
-        "x": 1430,
-        "y": 900,
+        "x": 280,
+        "y": 840,
         "wires": [
             [
                 "0b39586c86bd7f31",
@@ -1098,43 +790,20 @@
         "id": "0b39586c86bd7f31",
         "type": "function",
         "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "name": "Format for UI",
-        "func": "const status = msg.payload.status;\nconst value = msg.payload.value;\n\nmsg.payload = {\n    label: \"Đèn \" + value,\n    status: status,\n    color: status === \"ON\"\n        ? \"linear-gradient(to right, #00c6ff, #0072ff)\"  // gradient xanh ngọc -> xanh dương\n        : \"#2c2c2c\"  // xám đậm khi OFF\n};\n\nreturn msg;\n",
+        "func": "const status = msg.payload.status;\nconst value = msg.payload.value;\n\nmsg.payload = {\n    label: \"Đèn \" + value,\n    status: status,\n    color: status === \"ON\"\n        ? \"linear-gradient(135deg, #00ffe1, #0072ff)\"\n        : \"#2e2e2e\", // Màu nền khi tắt\n    shadow: status === \"ON\"\n        ? \"0 0 10px rgba(0, 255, 225, 0.6)\"\n        : \"0 0 5px rgba(0, 255, 225, 0.15)\" // viền xanh neon mờ khi tắt\n};\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1630,
-        "y": 920,
+        "x": 480,
+        "y": 860,
         "wires": [
             [
-                "f7687a48e4ad6a8a",
-                "22c450fa90673994"
-            ]
-        ]
-    },
-    {
-        "id": "f7687a48e4ad6a8a",
-        "type": "ui_template",
-        "z": "a26d5d20af5c6be2",
-        "group": "5e497d8f50e6c2b1",
-        "name": "Light Status Card",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "format": "<div style=\"\n    padding: 12px; \n    border-radius: 10px; \n    background: {{msg.payload.color}}; \n    color: white;\n    font-family: 'Segoe UI', sans-serif;\n    font-size: 16px;\n    line-height: 1.4;\n    text-align: left;\n    display: flex;\n    align-items: center;\n    gap: 10px;\n\">\n    <div style=\"font-size: 24px;\">\n        <i class=\"fa fa-lightbulb-o\" aria-hidden=\"true\"></i>\n    </div>\n    <div>\n        <div style=\"font-weight: bold;\">{{msg.payload.label}}</div>\n        <div>Trạng thái: <span style=\"font-weight: 500;\">{{msg.payload.status}}</span></div>\n    </div>\n</div>",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 1870,
-        "y": 940,
-        "wires": [
-            [
-                "22c450fa90673994"
+                "modern_ui_input_button"
             ]
         ]
     },
@@ -1151,12 +820,10 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 250,
-        "y": 380,
+        "x": 240,
+        "y": 340,
         "wires": [
-            [
-                "e195bc4fc41f7e35"
-            ]
+            []
         ]
     },
     {
@@ -1172,29 +839,27 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 450,
-        "y": 600,
+        "x": 440,
+        "y": 560,
         "wires": [
-            [
-                "4b6605032728b106",
-                "d4d29464e556a853"
-            ]
+            []
         ]
     },
     {
         "id": "51ff49c6f7a3cd55",
         "type": "function",
         "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "name": "Cập nhật trạng thái LED",
-        "func": "// Mặc định 70 đèn OFF và xám đậm\nlet leds = global.get(\"leds\") || Array.from({ length: 70 }, (_, i) => ({\n    id: i + 1,\n    status: \"OFF\",\n    color: \"#444\"\n}));\n\nif (msg.payload && msg.payload.value !== undefined) {\n    const index = msg.payload.value - 1;\n    if (index >= 0 && index < 70) {\n        leds[index].status = msg.payload.status;\n        leds[index].color = msg.payload.status === \"ON\" ? \"#00c9ff\" : \"#444\";\n    }\n}\n\nglobal.set(\"leds\", leds);\nmsg.payload = leds;\nreturn msg;\n",
+        "func": "// Mặc định 70 đèn OFF và xám đậm\nlet leds = global.get(\"leds\") || Array.from({ length: 70 }, (_, i) => ({\n    id: i + 1,\n    status: \"OFF\",\n    color: \"#444\"\n}));\n\nif (msg.payload && msg.payload.value !== undefined) {\n    const index = msg.payload.value - 1;\n    if (index >= 0 && index < 70) {\n        leds[index].status = msg.payload.status;\n        leds[index].color = msg.payload.status === \"ON\" ? \"#00c9ff\" : \"#444\";\n    }\n}\n\nglobal.set(\"leds\", leds);\nmsg.payload = leds;\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1490,
-        "y": 1000,
+        "x": 340,
+        "y": 940,
         "wires": [
             [
                 "e75f84680a2b8c83"
@@ -1205,19 +870,20 @@
         "id": "e75f84680a2b8c83",
         "type": "ui_template",
         "z": "a26d5d20af5c6be2",
-        "group": "a37bc6ea16728bdb",
+        "g": "95c11e8432e62ddb",
+        "group": "5e497d8f50e6c2b1",
         "name": "Hiển thị 70 LED",
-        "order": 6,
+        "order": 5,
         "width": 6,
         "height": 13,
-        "format": "<!-- Font Awesome -->\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css\">\n\n<!-- Tiêu đề bảng -->\n<h4 style=\"\n    text-align: center; \n    font-family: 'Segoe UI', sans-serif; \n    margin-top: 16px; \n    margin-bottom: 8px; \n    color: #333;               \n    font-size: 16px; \n    font-weight: 700;\n\">\n    BẢNG TRẠNG THÁI ĐÈN\n</h4>\n\n<!-- KHUNG NGOÀI được bo và đổi màu viền -->\n<div style=\"\n    border: 1px solid #d0d7de;     /* Viền xám sáng hiện đại */\n    border-radius: 14px;           \n    padding: 16px;\n    background-color: #f0f2f5;\n    max-width: 750px;\n    margin: 0 auto;\n    font-family: 'Segoe UI', sans-serif;\n\">\n\n    <div layout=\"row\" layout-wrap layout-align=\"center center\" style=\"justify-content: center;\">\n\n        <div ng-repeat=\"led in msg.payload\" style=\"margin: 4px;\n                    width: 120px;\n                    height: 80px;\n                    background: {{led.status === 'ON' ? 'linear-gradient(135deg, #00c9ff, #92fe9d)' : '#1f1f1f'}};  /* Xám đậm */\n                    color: white;\n                    border-radius: 20px;\n                    display: flex;\n                    flex-direction: column;\n                    justify-content: center;\n                    align-items: center;\n                    box-shadow: 0 4px 12px rgba(0,0,0,0.15);\n                    transition: transform 0.2s ease, box-shadow 0.2s ease;\n                    cursor: pointer;\"\n            onmouseover=\"this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 18px rgba(0,0,0,0.2)'\"\n            onmouseout=\"this.style.transform='scale(1)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)'\">\n\n            <!-- ICON LED -->\n            <div style=\"font-size: 24px; margin-bottom: 5px;\">\n                <i class=\"fas fa-lightbulb\"></i>\n            </div>\n\n            <!-- ID và trạng thái -->\n            <div style=\"font-size: 16px; font-weight: bold;\">LED {{led.id}}</div>\n            <div style=\"font-size: 13px; opacity: 0.9;\">{{led.status}}</div>\n        </div>\n    </div>\n</div>",
+        "format": "<!-- Font Awesome -->\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css\">\n\n<!-- Tiêu đề bảng -->\n<h4 style=\"\n    text-align: center; \n    font-family: 'Segoe UI', sans-serif; \n    margin-top: 16px; \n    margin-bottom: 8px; \n    color: #ccc;               \n    font-size: 16px; \n    font-weight: 700;\n\">\n    BẢNG TRẠNG THÁI ĐÈN\n</h4>\n\n<!-- ANIMATION CSS -->\n<style>\n    @keyframes glowPulse {\n        0% {\n            box-shadow: 0 0 10px 2px rgba(0, 200, 255, 0.08);\n        }\n\n        50% {\n            box-shadow: 0 0 22px 6px rgba(0, 200, 255, 0.22);\n        }\n\n        100% {\n            box-shadow: 0 0 10px 2px rgba(0, 200, 255, 0.08);\n        }\n    }\n\n    @keyframes shineSlide {\n        0% {\n            background-position: -200% center;\n        }\n\n        100% {\n            background-position: 200% center;\n        }\n    }\n</style>\n\n<!-- KHUNG NGOÀI -->\n<div style=\"\n    border: 1px solid #333;\n    border-radius: 14px;\n    padding: 16px;\nbackground: linear-gradient(135deg, #1c1c1c, #2a2a2a, #1a1a1a);\n    background-size: 200% 200%;\n    animation: glowPulse 5s ease-in-out infinite;\n    max-width: 750px;\n    margin: 0 auto;\n    font-family: 'Segoe UI', sans-serif;\n    color: white;\n\">\n    <div layout=\"row\" layout-wrap layout-align=\"center center\" style=\"justify-content: center;\">\n        <div ng-repeat=\"led in msg.payload\" style=\"\n                margin: 4px;\n                width: 120px;\n                height: 80px;\n                background: {{led.status === 'ON' \n                    ? 'linear-gradient(135deg, #00c9ff, #92fe9d)' \n                    : 'linear-gradient(135deg, #111111, #222222)'}};\n                background-size: 400% 400%;\n                animation: {{led.status === 'ON' ? 'shineSlide 3s linear infinite' : 'glowPulse 2.2s ease-in-out infinite'}};\n                color: white;\n                border-radius: 20px;\n                display: flex;\n                flex-direction: column;\n                justify-content: center;\n                align-items: center;\n                box-shadow: {{led.status === 'ON' \n                    ? '0 0 22px 8px rgba(0, 201, 255, 0.5)' \n                    : '0 0 12px 3px rgba(0, 200, 255, 0.1)'}};\n                transition: transform 0.2s ease, box-shadow 0.3s ease;\n                cursor: pointer;\"\n            onmouseover=\"this.style.transform='scale(1.08)'; this.style.boxShadow='0 0 28px 10px ' + (this.getAttribute('data-status') === 'ON' ? 'rgba(0, 201, 255, 0.65)' : 'rgba(0, 200, 255, 0.2)')\"\n            onmouseout=\"this.style.transform='scale(1)'; this.style.boxShadow=(this.getAttribute('data-status') === 'ON' \n                ? '0 0 22px 8px rgba(0, 201, 255, 0.5)' \n                : '0 0 12px 3px rgba(0, 200, 255, 0.1)')\" data-status=\"{{led.status}}\">\n\n            <!-- ICON LED -->\n            <div style=\"font-size: 24px; margin-bottom: 5px;\">\n                <i class=\"fas fa-lightbulb\"></i>\n            </div>\n\n            <!-- ID và trạng thái -->\n            <div style=\"font-size: 16px; font-weight: bold;\">LED {{led.id}}</div>\n            <div style=\"font-size: 13px; opacity: 0.85;\">{{led.status}}</div>\n        </div>\n    </div>\n</div>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1740,
-        "y": 1000,
+        "x": 590,
+        "y": 940,
         "wires": [
             []
         ]
@@ -1344,6 +1010,7 @@
         "id": "bf26a824d4fe9a56",
         "type": "ui_button",
         "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
         "name": "",
         "group": "d813ed12a10a369b",
         "order": 2,
@@ -1360,8 +1027,8 @@
         "payloadType": "json",
         "topic": "",
         "topicType": "str",
-        "x": 1400,
-        "y": 760,
+        "x": 1100,
+        "y": 840,
         "wires": [
             [
                 "ee2daf0403a325bc"
@@ -1380,8 +1047,8 @@
         "once": true,
         "onceDelay": "0.1",
         "topic": "",
-        "x": 660,
-        "y": 920,
+        "x": 540,
+        "y": 1360,
         "wires": [
             [
                 "aa6e44bc878f39db"
@@ -1401,8 +1068,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 850,
-        "y": 920,
+        "x": 730,
+        "y": 1360,
         "wires": [
             []
         ]
@@ -1429,12 +1096,450 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 1490,
-        "y": 820,
+        "x": 310,
+        "y": 800,
         "wires": [
             [
-                "0b39586c86bd7f31"
+                "0b39586c86bd7f31",
+                "51ff49c6f7a3cd55"
             ]
+        ]
+    },
+    {
+        "id": "modern_ui_input_button",
+        "type": "ui_template",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "group": "5e497d8f50e6c2b1",
+        "name": "Bật đèn",
+        "order": 4,
+        "width": 6,
+        "height": 10,
+        "format": "<!-- Font Awesome -->\n<style>\n  .glow-btn {\n    position: relative;\n    overflow: hidden;\n    z-index: 1;\n    color: white;\n    font-weight: bold;\n    padding: 12px 24px;\n    border: none;\n    border-radius: 10px;\n    font-size: 16px;\n    cursor: pointer;\n  }\n\n  .glow-btn::before {\n    content: \"\";\n    position: absolute;\n    top: 0;\n    left: -150%;\n    width: 200%;\n    height: 100%;\n    z-index: 0;\n    pointer-events: none;\n    animation: shimmer 3s infinite;\n  }\n\n  .glow-btn-on {\n    background-color: #0077cc;\n  }\n\n  .glow-btn-on::before {\n    background: linear-gradient(120deg,\n        rgba(0, 255, 255, 0),\n        rgba(0, 255, 255, 0.4),\n        rgba(0, 255, 255, 0));\n  }\n\n  .glow-btn-off {\n    background-color: #990000;\n  }\n\n  .glow-btn-off::before {\n    background: linear-gradient(120deg,\n        rgba(255, 165, 0, 0),\n        rgba(255, 200, 100, 0.4),\n        rgba(255, 165, 0, 0));\n  }\n\n  @keyframes shimmer {\n    0% {\n      left: -150%;\n    }\n\n    50% {\n      left: 100%;\n    }\n\n    100% {\n      left: 100%;\n    }\n  }\n\n  .fade-in-up {\n    opacity: 0;\n    transform: translateY(20px);\n    animation: fadeInUp 0.8s ease-out forwards;\n  }\n\n  @keyframes fadeInUp {\n    to {\n      opacity: 1;\n      transform: translateY(0);\n    }\n  }\n\n  html,\n  body {\n    height: auto !important;\n    min-height: 100%;\n    overflow-y: auto;\n    /* Cho phép cuộn theo chiều dọc */\n    scroll-behavior: smooth;\n  }\n\n  body {\n    margin: 0;\n    padding-bottom: 50px;\n    /* chừa khoảng cách nếu có nội dung dài */\n  }\n</style>\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css\">\n\n<!-- Container chính -->\n<div class=\"fade-in-up\"\n  style=\"font-family: 'Segoe UI', sans-serif; max-width: 380px; margin: auto; padding: 17px; border-radius: 18px;\n            background: linear-gradient(145deg, #1a1a1a, #2c2c2c); box-shadow: 0 6px 14px rgba(0,0,0,0.3); color: #fff;\">\n\n  <!-- Tiêu đề -->\n  <div style=\"padding: 12px; border-radius: 10px; background: #1f1f1f; color: white; font-size: 20px; font-weight: bold;\n              display: flex; align-items: center; justify-content: center; gap: 10px; margin: 5px 0;\n              text-shadow: 0 0 4px rgba(0, 255, 255, 0.6), 0 0 8px rgba(0, 255, 255, 0.4);\">\n    <i class=\"fa-solid fa-plug\"></i> Sinh viên & Giảng viên\n  </div>\n\n  <!-- Thẻ trạng thái -->\n  <div style=\"padding: 12px; border-radius: 10px; background: {{msg.payload.color}}; color: white; font-size: 16px;\n              display: flex; align-items: center; gap: 10px; margin: 16px 0; border: 1px solid rgba(0, 255, 255, 0.3);\n              box-shadow: 0 0 10px rgba(0, 255, 255, 0.2), 0 0 20px rgba(0, 255, 255, 0.1);\">\n    <div style=\"font-size: 24px;\"><i class=\"fa fa-lightbulb-o\"></i></div>\n    <div>\n      <div style=\"font-weight: bold;\">{{msg.payload.label}}</div>\n      <div>Trạng thái: <span style=\"font-weight: 500;\">{{msg.payload.status}}</span></div>\n    </div>\n  </div>\n\n  <!-- Nhập và nút bật/tắt -->\n  <div style=\"display: flex; flex-direction: column; align-items: center;\">\n    <input id=\"deviceInput1\" type=\"number\" min=\"1\" max=\"70\" placeholder=\"Nhập số đèn (1-70)\"\n           style=\"width: 90%; max-width: 300px; padding: 12px; font-size: 16px; border-radius: 10px;\n                  background-color: #2e2e2e; color: #00ffe1; box-shadow: inset 0 0 6px rgba(0,255,225,0.25); margin-bottom: 12px; border: none; outline: none;\">\n    <button id=\"sendBtn1\" class=\"glow-btn glow-btn-on\"\n      style=\"width: 90%; max-width: 300px; padding: 12px; font-size: 16px; border-radius: 10px;\n             background: linear-gradient(90deg, #00c9ff, #92fe9d); color: black; border: none; cursor: pointer;\n             font-weight: bold; letter-spacing: 0.5px; box-shadow: 0 3px 8px rgba(0,0,0,0.2); margin-bottom: 18px;\">\n      <i class=\"fa-solid fa-paper-plane\"></i> Bật đèn\n    </button>\n\n    <input id=\"deviceInput2\" type=\"number\" min=\"1\" max=\"70\" placeholder=\"Nhập số đèn (1-70)\"\n           style=\"width: 90%; max-width: 300px; padding: 12px; font-size: 16px; border-radius: 10px;\n                  background-color: #2e2e2e; color: #00ffe1; box-shadow: inset 0 0 6px rgba(0,255,225,0.25); margin-bottom: 12px; border: none; outline: none;\">\n    <button id=\"sendBtn2\" class=\"glow-btn glow-btn-off\"\n      style=\"width: 90%; max-width: 300px; padding: 12px; font-size: 16px; border-radius: 10px;\n             background: linear-gradient(90deg, #ff9966, #ff5e62); color: black; border: none; cursor: pointer;\n             font-weight: bold; letter-spacing: 0.5px; box-shadow: 0 3px 8px rgba(0,0,0,0.2);\">\n      <i class=\"fa-solid fa-paper-plane\"></i> Tắt đèn\n    </button>\n  </div>\n\n  <!-- Nút khởi động giọng nói -->\n  <div style=\"margin-top: 20px; text-align: center;\">\n    <button id=\"start-btn\" style=\"padding: 14px 28px; font-size: 15px; font-weight: bold;\n      background: linear-gradient(135deg, #00ffe1, #0055ff); color: black; border: none; border-radius: 50px;\n      cursor: pointer; box-shadow: 0 0 12px #00ffe1, 0 0 24px #0055ff; transition: all 0.3s ease;\">\n      🎤 Nhấn để nói\n    </button>\n  </div>\n</div>\n\n<!-- Phần hướng dẫn và kết quả, chỉ chữ viền neon dịu mắt, KHÔNG viền hay background bao ngoài -->\n<div style=\"max-width: 380px; margin: 20px auto 0 auto; font-family: 'Segoe UI', sans-serif; color: white;\">\n\n  <p id=\"voice-guide\" style=\"\n    margin: 0 0 6px 0;\n    font-size: 16px;\n    font-style: italic;\n    text-align: center;\n    text-shadow:\n      0 0 2px #00ffff,\n      0 0 4px #00ffff,\n      0 0 6px #00ffff;\">\n    <i class=\"fa-solid fa-microphone\"></i> Nói: \"Bật đèn 1\" hoặc \"Tắt đèn 2, 3\"\n  </p>\n\n  <p id=\"result\" style=\"\n  margin: 0;\n  font-size: 14px;\n  font-weight: bold;\n  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n  text-align: center;\n  color: black;\n  text-shadow:\n    0 0 5px #00ffe1,\n    0 0 10px #00ffe1,\n    0 0 20px #0077ff,\n    0 0 30px #0077ff;\">\n  </p>\n\n</div>\n\n<!-- SCRIPT -->\n<script>\n  (function(scope) {\n  const inputs = [\n    { id: \"deviceInput1\", btn: \"sendBtn1\", topic: \"input1\" },\n    { id: \"deviceInput2\", btn: \"sendBtn2\", topic: \"input2\" }\n  ];\n\n  inputs.forEach(({ id, btn, topic }) => {\n    const input = document.getElementById(id);\n    const button = document.getElementById(btn);\n\n    input.addEventListener(\"focus\", () => {\n      input.style.boxShadow = \"0 0 10px #00ffe1\";\n      input.style.transform = \"scale(1.03)\";\n    });\n\n    input.addEventListener(\"blur\", () => {\n      input.style.boxShadow = \"inset 0 0 6px rgba(0,255,225,0.25)\";\n      input.style.transform = \"scale(1)\";\n    });\n\n    button.addEventListener(\"mouseover\", () => {\n      button.style.transform = \"scale(1.04)\";\n      button.style.boxShadow = \"0 6px 12px rgba(0,0,0,0.35)\";\n    });\n\n    button.addEventListener(\"mouseout\", () => {\n      button.style.transform = \"scale(1)\";\n      button.style.boxShadow = \"0 3px 8px rgba(0,0,0,0.2)\";\n    });\n\n    button.onclick = () => {\n      const value = parseInt(input.value);\n      if (!isNaN(value) && value >= 1 && value <= 70) {\n        scope.send({ payload: value, topic });\n        input.value = \"\"; // 💡 XÓA Ô NHẬP sau khi gửi lệnh\n      } else {\n        alert(\"⚠️ Vui lòng nhập số từ 1 đến 70\");\n      }\n    };\n  });\n\n  const btn = document.getElementById('start-btn');\n  const result = document.getElementById('result');\n  const guide = document.getElementById('voice-guide');\n  const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();\n  recognition.lang = 'vi-VN';\n  recognition.interimResults = false;\n\n  btn.addEventListener('click', () => {\n    btn.innerHTML = '🎧 Đang nghe...';\n    btn.style.background = '#000';\n    btn.style.color = '#00ffe1';\n    btn.style.boxShadow = '0 0 10px #00ffe1, 0 0 20px #00ffe1';\n    recognition.start();\n    setTimeout(() => {\n    recognition.stop();\n    }, 5500);\n  });\n\nrecognition.onresult = (event) => {\nconst transcript = event.results[0][0].transcript.toLowerCase();\nguide.style.display = 'none';\nresult.innerHTML = `👉 Bạn nói:\n\"<span style='color: black; font-size: 14px; text-shadow: 0 0 4px #00ffe1, 0 0 8px #0077ff;'>${transcript}</span>\"`;\nbtn.innerHTML = '🎤 Nhấn để nói';\nbtn.style.background = 'linear-gradient(135deg, #00ffe1, #0055ff)';\nbtn.style.color = 'black';\nbtn.style.boxShadow = '0 0 12px #00ffe1, 0 0 24px #0055ff';\n\nconst isBat = transcript.includes(\"bật\");\nconst isTat = transcript.includes(\"tắt\");\n\nconst numbers = transcript.match(/\\d+/g); // tìm tất cả các số\n\nif ((isBat || isTat) && numbers) {\nconst uniqueNumbers = [...new Set(numbers.map(n => parseInt(n)).filter(n => n >= 1 && n <= 70))]; if\n  (uniqueNumbers.length===0) { scope.send({ payload: \"Không có số đèn hợp lệ!\" }); } else {\n  uniqueNumbers.forEach(number=> {\n  scope.send({\n  payload: (isBat ? \"bật \" : \"tắt \") + number,\n  topic: isBat ? \"input3\" : \"input4\"\n  });\n  });\n  }\n  }\n  else if (\n  transcript.includes(\"tắt tất cả\") ||\n  transcript.includes(\"tắt hết\") ||\n  transcript.includes(\"tắt đèn tất cả\") ||\n  transcript.includes(\"tắt đèn hết\")\n  ) {\n  scope.send({ payload: \"ALL_OFF\", topic: \"input3\" });\n  }\n  else if (\n  transcript.includes(\"bật tất cả\") ||\n  transcript.includes(\"bật hết\") ||\n  transcript.includes(\"bật đèn tất cả\") ||\n  transcript.includes(\"bật đèn hết\")\n  ) {\n  scope.send({ payload: \"ALL_ON\", topic: \"input3\" });\n  }\n\n  setTimeout(() => {\n  guide.style.display = 'block';\n  result.innerHTML = '';\n  }, 6000);\n  };\n\n  recognition.onerror = (event) => {\n  result.textContent = `Lỗi: ${event.error}`;\n  btn.innerHTML = '🎤 Nhấn để nói';\n  btn.style.background = 'linear-gradient(135deg, #00ffe1, #0055ff)';\n  btn.style.color = 'black';\n  btn.style.boxShadow = '0 0 12px #00ffe1, 0 0 24px #0055ff';\n  scope.send({ payload: \"Lỗi: \" + event.error });\n  };\n  recognition.onend = () => {\n  btn.innerHTML = '🎤 Nhấn để nói';\n  btn.style.background = 'linear-gradient(135deg, #00ffe1, #0055ff)';\n  btn.style.color = 'black';\n  btn.style.boxShadow = '0 0 12px #00ffe1, 0 0 24px #0055ff';\n  };\n})(scope);\n</script>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 90,
+        "y": 280,
+        "wires": [
+            [
+                "0d56fe0a123fe9f3",
+                "cc702b49a4f030e6"
+            ]
+        ]
+    },
+    {
+        "id": "0d56fe0a123fe9f3",
+        "type": "switch",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "name": "Phân loại theo topic",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "input1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "input2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "input3",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 190,
+        "y": 200,
+        "wires": [
+            [
+                "3b590e948ed9e709"
+            ],
+            [
+                "fc2a31a8d88eb433"
+            ],
+            [
+                "0b1b447ac6948cdb",
+                "fdbf92184111d1ef"
+            ]
+        ]
+    },
+    {
+        "id": "245d57a70f155957",
+        "type": "switch",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "name": "Phân loại theo topic",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "input3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "input4",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 640,
+        "y": 700,
+        "wires": [
+            [
+                "27496b907f4d1829"
+            ],
+            [
+                "aa6b3cbf89643be1"
+            ]
+        ]
+    },
+    {
+        "id": "27496b907f4d1829",
+        "type": "function",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "name": "Lấy số từ giọng nói tắt tất cả",
+        "func": "if (msg.payload === \"ALL_OFF\") {\n    const msgs = [];\n    for (let i = 1; i <= 70; i++) {\n        msgs.push({\n            payload: {\n                device: i,\n                Hour: 1\n            }\n        });\n    }\n    return [msgs]; // Gửi hàng loạt message ra cổng đầu tiên\n}\nreturn [null];\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 700,
+        "wires": [
+            [
+                "f5270f2a13d6562f",
+                "7b452728.b85e28"
+            ]
+        ]
+    },
+    {
+        "id": "aa6b3cbf89643be1",
+        "type": "function",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "name": "Lấy số từ giọng nói bật tất cả",
+        "func": "if (msg.payload === \"ALL_ON\") {\n    const msgs = [];\n    for (let i = 1; i <= 70; i++) {\n        msgs.push({\n            payload: {\n                device: i,\n                Hour: 1\n            }\n        });\n    }\n    return [msgs]; // Gửi hàng loạt message ra cổng đầu tiên\n}\nreturn [null];\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 740,
+        "wires": [
+            [
+                "ee520d3d2efc4167",
+                "7b452728.b85e28"
+            ]
+        ]
+    },
+    {
+        "id": "fdbf92184111d1ef",
+        "type": "debug",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "e4c1d9958ddb7d4b",
+        "type": "ui_template",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "group": "5e497d8f50e6c2b1",
+        "name": "Thoát",
+        "order": 2,
+        "width": 3,
+        "height": 1,
+        "format": "<style>\n  .fancy-btn {\n    position: relative;\n    display: inline-block;\n    padding: 12px 28px;\n    font-size: 14px;\n    width: 140px;\n    font-weight: bold;\n    color: white;\n    background: linear-gradient(135deg, #00eaff, #0077ff);\n    border: none;\n    border-radius: 10px;\n    cursor: pointer;\n    overflow: hidden;\n    transition: transform 0.3s ease;\n    /* Đổ bóng ngoài mờ hơn */\n    box-shadow: 0 0 12px rgba(0, 234, 255, 0.3), 0 0 24px rgba(0, 119, 255, 0.25);\n  }\n\n  .fancy-btn:hover {\n    transform: scale(1.05);\n  }\n\n  .fancy-btn::before {\n    content: '';\n    position: absolute;\n    top: 0;\n    left: -75%;\n    width: 50%;\n    height: 100%;\n    background: rgba(255, 255, 255, 0.25);\n    transform: skewX(-25deg);\n    animation: sweep 2s infinite;\n  }\n\n  @keyframes sweep {\n    0% {\n      left: -75%;\n    }\n\n    100% {\n      left: 125%;\n    }\n  }\n\n  .fadeout {\n    animation: fadeOutBody 1s forwards;\n  }\n\n  @keyframes fadeOutBody {\n    to {\n      opacity: 0;\n      transform: scale(1.02);\n    }\n  }\n</style>\n\n<div style=\"text-align:center; margin-top: 0;\">\n  <button class=\"fancy-btn\" onclick=\"fadeAndGo()\">THOÁT</button>\n</div>\n\n<script>\n  function fadeAndGo() {\n    document.body.classList.add('fadeout');\n    const audio = new Audio('https://assets.mixkit.co/sfx/download/mixkit-interface-click-1125.mp3');\n    audio.play();\n    setTimeout(() => {\n      window.location.href = \"https://cisat.hcmute.edu.vn/\";\n    }, 1000);\n  }\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1250,
+        "y": 960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c49751b87ec2bc15",
+        "type": "ui_template",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "group": "5e497d8f50e6c2b1",
+        "name": "Hướng dẫn",
+        "order": 3,
+        "width": 3,
+        "height": 1,
+        "format": "<div style=\"text-align:center; margin-top: 0;\">\n  <md-button class=\"fancy-btn\" ng-click=\"playDropSound(); send({payload: {tab: 'Hướng dẫn'}})\">\n    Hướng dẫn\n  </md-button>\n</div>\n\n<audio id=\"dropSound\" src=\"https://chattest.openai.com/mf/files/file-3kcjR1N1ByHr4XMGVFerUt/water-drop-89799.mp3\"\n  preload=\"auto\"></audio>\n\n<script>\n  function playDropSound() {\n    const audio = document.getElementById('dropSound');\n    if (audio) {\n      audio.currentTime = 0;\n      audio.play();\n    }\n  }\n</script>\n\n<style>\n  .fancy-btn {\n    position: relative;\n    display: inline-block;\n    padding: 12px 28px;\n    font-size: 14px;\n    width: 140px;\n    font-weight: bold;\n    color: white !important;\n    background: linear-gradient(135deg, #00eaff, #0077ff);\n    border: none;\n    border-radius: 10px;\n    cursor: pointer;\n    overflow: hidden;\n    transition: transform 0.3s ease, box-shadow 0.3s ease;\n    box-shadow: 0 0 6px rgba(0, 234, 255, 0.4), 0 0 12px rgba(0, 119, 255, 0.3);\n    /* Nhạt hơn */\n  }\n\n  .fancy-btn:hover {\n    transform: scale(0.8);\n    box-shadow: 0 0 10px rgba(0, 234, 255, 0.8), 0 0 18px rgba(0, 119, 255, 0.7);\n    /* Vẫn có hiệu ứng hover */\n  }\n\n  .fancy-btn::before {\n    content: '';\n    position: absolute;\n    top: 0;\n    left: -100%;\n    width: 50%;\n    height: 100%;\n    background: rgba(255, 255, 255, 0.25);\n    transform: skewX(-20deg);\n    animation: sweep 2.5s infinite;\n    pointer-events: none;\n  }\n\n  @keyframes sweep {\n    0% {\n      left: -100%;\n    }\n\n    100% {\n      left: 120%;\n    }\n  }\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1250,
+        "y": 900,
+        "wires": [
+            [
+                "ee2daf0403a325bc"
+            ]
+        ]
+    },
+    {
+        "id": "f1aabc1e.b1c59",
+        "type": "inject",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "name": "Gửi lúc 23h",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 23 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "ALL_OFF",
+        "payloadType": "str",
+        "x": 670,
+        "y": 800,
+        "wires": [
+            [
+                "bdde4fc2.a51e3"
+            ]
+        ]
+    },
+    {
+        "id": "bdde4fc2.a51e3",
+        "type": "function",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "name": "Gửi 2 lần cách 1p",
+        "func": "node.send({ payload: msg.payload }); // Gửi lần 1\n\nsetTimeout(() => {\n    node.send({ payload: msg.payload }); // Gửi lần 2 sau 1 phút\n}, 60 * 1000);\n\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 800,
+        "wires": [
+            [
+                "7b452728.b85e28",
+                "27496b907f4d1829"
+            ]
+        ]
+    },
+    {
+        "id": "7b452728.b85e28",
+        "type": "debug",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "name": "Kết quả",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1050,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "95f15cbb8646566f",
+        "type": "ui_template",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "group": "group_guides",
+        "name": "Quay lại",
+        "order": 3,
+        "width": 3,
+        "height": 1,
+        "format": "<div style=\"text-align:center; margin-top: 0;\">\n  <md-button class=\"fancy-btn\" ng-click=\"playDropSound(); send({payload: {tab: 'Sinh viên - Giảng viên'}})\">\n    Quay lại\n  </md-button>\n</div>\n\n<audio id=\"dropSound\" src=\"https://www.soundjay.com/water/sounds/water-droplet-1.mp3\" preload=\"auto\"></audio>\n\n<script>\n  function playDropSound() {\n    const audio = document.getElementById('dropSound');\n    if (audio) {\n      audio.currentTime = 0;\n      audio.play();\n    }\n  }\n</script>\n\n<style>\n  .fancy-btn {\n    position: relative;\n    display: inline-block;\n    padding: 12px 28px;\n    font-size: 14px;\n    width: 140px;\n    font-weight: bold;\n    color: white !important;\n    background: linear-gradient(135deg, #00eaff, #0077ff);\n    border: none;\n    border-radius: 10px;\n    cursor: pointer;\n    overflow: hidden;\n    transition: transform 0.3s ease;\n    box-shadow: 0 0 8px #00eaff80, 0 0 15px #0077ff80;\n  }\n\n  .fancy-btn:hover {\n    transform: scale(1.05);\n    box-shadow: 0 0 12px #00eaff, 0 0 22px #0077ff;\n  }\n\n  .fancy-btn::before {\n    content: '';\n    position: absolute;\n    top: 0;\n    left: -75%;\n    width: 50%;\n    height: 100%;\n    background: rgba(255, 255, 255, 0.2);\n    transform: skewX(-25deg);\n    animation: sweep 3s infinite;\n    pointer-events: none;\n  }\n\n  @keyframes sweep {\n    0% {\n      left: -75%;\n    }\n\n    100% {\n      left: 125%;\n    }\n  }\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1060,
+        "y": 940,
+        "wires": [
+            [
+                "ee2daf0403a325bc"
+            ]
+        ]
+    },
+    {
+        "id": "76b8b9c0526a8085",
+        "type": "ui_template",
+        "z": "a26d5d20af5c6be2",
+        "g": "8ae63e4ecefe3e73",
+        "group": "5e497d8f50e6c2b1",
+        "name": "Thong báo",
+        "order": 6,
+        "width": 6,
+        "height": 1,
+        "format": "<style>\n  @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');\n\n  #Login-msg {\n    display: none;\n    position: fixed;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    width: 86vw;\n    max-width: 300px;\n    background: #0a0f1c;\n    color: #00f7ff;\n    border: 2px solid #00f7ff;\n    border-radius: 14px;\n    padding: 14px 14px 20px;\n    font-size: 15px;\n    font-family: 'Quicksand', sans-serif;\n    font-weight: 600;\n    text-align: center;\n    z-index: 9999;\n    box-shadow: 0 0 15px #00f7ff, 0 0 25px #00f7ff44;\n    animation: fadeInScale 0.35s ease-out;\n    line-height: 1.4;\n  }\n\n  #Login-msg::before {\n    content: \"⚠️\";\n    display: block;\n    font-size: 26px;\n    margin-bottom: 6px;\n  }\n\n  #Login-msg button {\n    margin-top: 12px;\n    padding: 7px 18px;\n    font-size: 14px;\n    font-weight: bold;\n    border: none;\n    border-radius: 8px;\n    background: #00f7ff;\n    color: #0a0f1c;\n    cursor: pointer;\n    box-shadow: 0 0 7px #00f7ff, 0 0 14px #00f7ff88;\n    transition: transform 0.2s ease;\n  }\n\n  #Login-msg button:hover {\n    transform: scale(1.05);\n  }\n\n  #overlay-bg {\n    display: none;\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    background-color: rgba(0, 0, 0, 0.6);\n    backdrop-filter: blur(3px);\n    z-index: 9998;\n  }\n\n  @keyframes fadeInScale {\n    0% {\n      transform: translate(-50%, -50%) scale(0.85);\n      opacity: 0;\n    }\n\n    100% {\n      transform: translate(-50%, -50%) scale(1);\n      opacity: 1;\n    }\n  }\n</style>\n\n<!-- Nền mờ -->\n<div id=\"overlay-bg\"></div>\n\n<!-- Hộp thoại thông báo -->\n<div id=\"Login-msg\">\n  Hết quyền truy cập<br>Vui lòng đăng nhập lại\n  <br>\n  <button onclick=\"window.location.href='https://cisat.hcmute.edu.vn/'\">Thoát</button>\n</div>\n\n<script>\n  (function(scope) {\n    scope.$watch('msg.payload', function(payload) {\n      const loginMsg = document.getElementById('Login-msg');\n      const overlay = document.getElementById('overlay-bg');\n\n      if (payload === 'redirect') {\n        loginMsg.style.display = 'block';\n        overlay.style.display = 'block';\n      } else {\n        loginMsg.style.display = 'none';\n        overlay.style.display = 'none';\n      }\n    });\n  })(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 990,
+        "y": 1500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "45ae5c22d2e4c829",
+        "type": "ui_template",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "group": "d17de25d18839cbe",
+        "name": "Thông báo & Chuyển trang",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "format": "<style>\n  #Login-msg {\n    display: none;\n    position: fixed;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    background: white;\n    color: red;\n    border: 2px solid red;\n    border-radius: 12px;\n    padding: 30px 40px;\n    font-size: 20px;\n    font-weight: bold;\n    z-index: 9999;\n    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);\n  }\n\n  /* Làm mờ nền khi hiển thị hộp thoại */\n  #overlay-bg {\n    display: none;\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, 0.4);\n    z-index: 9998;\n  }\n</style>\n\n<!-- Nền mờ -->\n<div id=\"overlay-bg\"></div>\n\n<!-- Hộp thoại thông báo -->\n<div id=\"Login-msg\">❌ Hết quyền truy cập</div>\n\n<script>\n  (function(scope) {\n    scope.$watch('msg.payload', function(payload) {\n      const loginMsg = document.getElementById('Login-msg');\n      const overlay = document.getElementById('overlay-bg');\n\n      if (payload === 'redirect') {\n        loginMsg.style.display = 'block';\n        overlay.style.display = 'block';\n\n        // Chờ 1 giây rồi chuyển trang\n        setTimeout(() => {\n          window.location.href = \"https://cisat.hcmute.edu.vn/\";\n        }, 9000);\n      } else {\n        loginMsg.style.display = 'none';\n        overlay.style.display = 'none';\n      }\n    });\n  })(scope);\n</script>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 1000,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "61137f59bdcbeaba",
+        "type": "change",
+        "z": "a26d5d20af5c6be2",
+        "g": "8ae63e4ecefe3e73",
+        "name": "Set redirect",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "redirect",
+                "tot": "str"
+            }
+        ],
+        "x": 590,
+        "y": 1460,
+        "wires": [
+            [
+                "1071b37d9e248f42",
+                "76b8b9c0526a8085"
+            ]
+        ]
+    },
+    {
+        "id": "30878c06314a1932",
+        "type": "change",
+        "z": "a26d5d20af5c6be2",
+        "g": "8ae63e4ecefe3e73",
+        "name": "Xóa redirect",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "idle",
+                "tot": "str"
+            }
+        ],
+        "x": 800,
+        "y": 1540,
+        "wires": [
+            [
+                "76b8b9c0526a8085"
+            ]
+        ]
+    },
+    {
+        "id": "1071b37d9e248f42",
+        "type": "delay",
+        "z": "a26d5d20af5c6be2",
+        "g": "8ae63e4ecefe3e73",
+        "name": "Delay xóa redirect",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "",
+        "randomLast": "",
+        "randomUnits": "seconds",
+        "allowrate": false,
+        "outputs": 1,
+        "x": 800,
+        "y": 1460,
+        "wires": [
+            [
+                "30878c06314a1932"
+            ]
+        ]
+    },
+    {
+        "id": "8295b351820520ca",
+        "type": "ui_template",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "group": "5e497d8f50e6c2b1",
+        "name": "Thong báo",
+        "order": 6,
+        "width": 6,
+        "height": 1,
+        "format": "<style>\n  @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');\n\n  #control-msg {\n    display: none;\n    position: fixed;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    width: 86vw;\n    max-width: 200px;\n    background: #0a0f1c;\n    color: #00f7ff;\n    border: 2px solid #00f7ff;\n    border-radius: 14px;\n    padding: 12px 14px 18px;\n    font-size: 14px;\n    font-family: 'Quicksand', sans-serif;\n    font-weight: 700;\n    text-align: center;\n    z-index: 9999;\n    box-shadow: 0 0 15px #00f7ff, 0 0 25px #00f7ff44;\n    animation: fadeInScale 0.35s ease-out;\n    line-height: 1.5;\n    opacity: 1;\n    transition: opacity 0.5s ease-out;\n  }\n\n  @keyframes fadeInScale {\n    0% {\n      transform: translate(-50%, -50%) scale(0.85);\n      opacity: 0;\n    }\n\n    100% {\n      transform: translate(-50%, -50%) scale(1);\n      opacity: 1;\n    }\n  }\n</style>\n\n<!-- Popup thông báo -->\n<div id=\"control-msg\">Điều khiển thành công</div>\n\n<script>\n  (function(scope) {\n    scope.$watch('msg.payload', function(payload) {\n      const msgBox = document.getElementById('control-msg');\n\n      if (payload === 'redirect') {\n        msgBox.style.display = 'block';\n        msgBox.style.opacity = '1';\n\n        // Ẩn hộp thoại sau 1 giây\n        setTimeout(() => {\n          msgBox.style.opacity = '0';\n\n          // Sau khi ẩn xong, ẩn luôn popup (KHÔNG FADEOUT TRANG)\n          setTimeout(() => {\n            msgBox.style.display = 'none';\n          }, 500);\n        }, 1000);\n      }\n    });\n  })(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 950,
+        "y": 320,
+        "wires": [
+            []
         ]
     },
     {
@@ -1456,17 +1561,6 @@
         "order": 1,
         "width": 1,
         "height": 1
-    },
-    {
-        "id": "a37bc6ea16728bdb",
-        "type": "ui_group",
-        "name": "Điều khiển ",
-        "tab": "f3de46927529ab11",
-        "order": 2,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
     },
     {
         "id": "37fcf5bfccf8b220",
@@ -1500,17 +1594,6 @@
         "sessionExpiry": ""
     },
     {
-        "id": "5e497d8f50e6c2b1",
-        "type": "ui_group",
-        "name": "Vui lòng thoát sau khi điều khiển",
-        "tab": "f3de46927529ab11",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "group_guides",
         "type": "ui_group",
         "name": "Hướng dẫn MakerSpace",
@@ -1522,10 +1605,21 @@
         "className": ""
     },
     {
+        "id": "5e497d8f50e6c2b1",
+        "type": "ui_group",
+        "name": "Vui lòng thoát sau khi điều khiển",
+        "tab": "f3de46927529ab11",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
         "id": "d813ed12a10a369b",
         "type": "ui_group",
         "name": "Vui lòng thoát sau khi sử dụng",
-        "tab": "d63f8baea45689cf",
+        "tab": "",
         "order": 2,
         "disp": true,
         "width": 6,
@@ -1536,21 +1630,12 @@
         "id": "d17de25d18839cbe",
         "type": "ui_group",
         "name": "Thiết bị",
-        "tab": "d63f8baea45689cf",
+        "tab": "",
         "order": 1,
         "disp": true,
         "width": 6,
         "collapse": false,
         "className": ""
-    },
-    {
-        "id": "f3de46927529ab11",
-        "type": "ui_tab",
-        "name": "Sinh viên - Giảng viên",
-        "icon": "dashboard",
-        "order": 1,
-        "disabled": false,
-        "hidden": false
     },
     {
         "id": "tab_guides",
@@ -1560,11 +1645,11 @@
         "order": 2
     },
     {
-        "id": "d63f8baea45689cf",
+        "id": "f3de46927529ab11",
         "type": "ui_tab",
-        "name": "Thiết bị đèn",
+        "name": "Sinh viên - Giảng viên",
         "icon": "dashboard",
-        "order": 3,
+        "order": 1,
         "disabled": false,
         "hidden": false
     }
