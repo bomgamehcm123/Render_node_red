@@ -61,7 +61,8 @@
             "7b452728.b85e28",
             "95f15cbb8646566f",
             "45ae5c22d2e4c829",
-            "8295b351820520ca"
+            "8295b351820520ca",
+            "ed96a785f35f85d7"
         ],
         "x": 4,
         "y": 119,
@@ -1189,7 +1190,7 @@
             },
             {
                 "t": "eq",
-                "v": "input4",
+                "v": "input3",
                 "vt": "str"
             }
         ],
@@ -1200,10 +1201,12 @@
         "y": 700,
         "wires": [
             [
-                "27496b907f4d1829"
+                "27496b907f4d1829",
+                "7b452728.b85e28"
             ],
             [
-                "aa6b3cbf89643be1"
+                "aa6b3cbf89643be1",
+                "7b452728.b85e28"
             ]
         ]
     },
@@ -1242,7 +1245,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 950,
+        "x": 940,
         "y": 740,
         "wires": [
             [
@@ -1543,6 +1546,28 @@
         ]
     },
     {
+        "id": "ed96a785f35f85d7",
+        "type": "ui_template",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "group": "f019ca3911f49866",
+        "name": "Đăng nhập",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n  @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');\n\n  #overlay-bg {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    background-color: rgba(0, 0, 0, 0.6);\n    backdrop-filter: blur(3px);\n    z-index: 9998;\n  }\n\n  #Login-msg {\n    position: fixed;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    width: 300px;\n    background: #0a0f1c;\n    color: #00f7ff;\n    border: 2px solid #00f7ff;\n    border-radius: 14px;\n    padding: 20px;\n    font-family: 'Quicksand', sans-serif;\n    z-index: 9999;\n    box-shadow: 0 0 15px #00f7ff, 0 0 25px #00f7ff44;\n    animation: fadeInScale 0.35s ease-out;\n  }\n\n  #Login-msg h2 {\n    margin-bottom: 15px;\n    font-size: 20px;\n  }\n\n  #Login-msg input {\n    width: 90%;\n    margin: 6px 0;\n    padding: 8px;\n    border: none;\n    border-radius: 8px;\n    background: #222;\n    color: #fff;\n    outline: none;\n    font-size: 14px;\n  }\n\n  #Login-msg button {\n    margin-top: 12px;\n    padding: 8px 18px;\n    font-size: 14px;\n    font-weight: bold;\n    border: none;\n    border-radius: 8px;\n    background: #00f7ff;\n    color: #0a0f1c;\n    cursor: pointer;\n    box-shadow: 0 0 7px #00f7ff, 0 0 14px #00f7ff88;\n    transition: transform 0.2s ease;\n  }\n\n  #Login-msg button:hover {\n    transform: scale(1.05);\n  }\n\n  @keyframes fadeInScale {\n    0% {\n      transform: translate(-50%, -50%) scale(0.85);\n      opacity: 0;\n    }\n\n    100% {\n      transform: translate(-50%, -50%) scale(1);\n      opacity: 1;\n    }\n  }\n</style>\n\n<!-- Nền mờ -->\n<div id=\"overlay-bg\" style=\"display: block;\"></div>\n\n<!-- Hộp thoại đăng nhập -->\n<div id=\"Login-msg\" style=\"display: block;\">\n  <h2>Đăng nhập</h2>\n  <input type=\"text\" id=\"username\" placeholder=\"Tài khoản\"><br>\n  <input type=\"password\" id=\"password\" placeholder=\"Mật khẩu\"><br>\n  <button onclick=\"submitLogin()\">Đăng nhập</button>\n</div>\n\n<script>\n  function submitLogin() {\n    const user = document.getElementById('username').value;\n    const pass = document.getElementById('password').value;\n\n    if (user && pass) {\n      send({ payload: { username: user, password: pass } });\n\n      document.getElementById('Login-msg').style.display = 'none';\n      document.getElementById('overlay-bg').style.display = 'none';\n    } else {\n      alert(\"Vui lòng điền đầy đủ tài khoản và mật khẩu.\");\n    }\n  }\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 790,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "db456837885faf52",
         "type": "ui_spacer",
         "z": "a26d5d20af5c6be2",
@@ -1638,6 +1663,17 @@
         "className": ""
     },
     {
+        "id": "f019ca3911f49866",
+        "type": "ui_group",
+        "name": "Liên hệ admin đăng kí tài khoản",
+        "tab": "e93f1d4d44c6aa68",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
         "id": "tab_guides",
         "type": "ui_tab",
         "name": "Hướng dẫn",
@@ -1652,5 +1688,12 @@
         "order": 1,
         "disabled": false,
         "hidden": false
+    },
+    {
+        "id": "e93f1d4d44c6aa68",
+        "type": "ui_tab",
+        "name": "Đã đăng ký",
+        "icon": "account_circle",
+        "order": 5
     }
 ]
