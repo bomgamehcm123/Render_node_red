@@ -63,7 +63,8 @@
             "45ae5c22d2e4c829",
             "8295b351820520ca",
             "ed96a785f35f85d7",
-            "f5943765792b5360"
+            "f5943765792b5360",
+            "bdd1986cf1864302"
         ],
         "x": 4,
         "y": 119,
@@ -91,12 +92,15 @@
             "aa6e44bc878f39db",
             "76b8b9c0526a8085",
             "61137f59bdcbeaba",
-            "30878c06314a1932"
+            "30878c06314a1932",
+            "92f37043caa09a64",
+            "2a9bcaaf6641cf3a",
+            "3e9c20415b50e895"
         ],
-        "x": 4,
-        "y": 1319,
-        "w": 1042,
-        "h": 382
+        "x": -6,
+        "y": 1239,
+        "w": 1052,
+        "h": 462
     },
     {
         "id": "cc702b49a4f030e6",
@@ -661,7 +665,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 420,
+        "x": 470,
         "y": 640,
         "wires": [
             [
@@ -1195,7 +1199,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 640,
+        "x": 590,
         "y": 700,
         "wires": [
             [
@@ -1203,8 +1207,8 @@
                 "7b452728.b85e28"
             ],
             [
-                "aa6b3cbf89643be1",
-                "7b452728.b85e28"
+                "7b452728.b85e28",
+                "bdd1986cf1864302"
             ]
         ]
     },
@@ -1243,8 +1247,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 940,
-        "y": 740,
+        "x": 880,
+        "y": 780,
         "wires": [
             [
                 "ee520d3d2efc4167",
@@ -1354,8 +1358,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 810,
-        "y": 800,
+        "x": 830,
+        "y": 820,
         "wires": [
             [
                 "7b452728.b85e28",
@@ -1556,6 +1560,83 @@
         "broker": "ed96e13f2437c5eb",
         "x": 1070,
         "y": 180,
+        "wires": []
+    },
+    {
+        "id": "92f37043caa09a64",
+        "type": "function",
+        "z": "a26d5d20af5c6be2",
+        "g": "8ae63e4ecefe3e73",
+        "name": "Kiểm tra token",
+        "func": "// Parse token\nconst data = JSON.parse(msg.payload);\n\n// Đổi tên biến token và timestamp\nconst currentToken = flow.get(\"myNewToken\");\nconst tokenTimestamp = flow.get(\"myNewTokenTimestamp\");\n\nconst now = new Date().getTime();\nconst tenMinutes = 10 * 60 * 1000;\n\nif (data.token) {\n    if (!currentToken || (now - tokenTimestamp > tenMinutes) || data.token !== currentToken) {\n        flow.set(\"myNewToken\", data.token);\n        flow.set(\"myNewTokenTimestamp\", now);\n        flow.set(\"mic\", true);\n    } else {\n        flow.set(\"mic\", true);\n    }\n} else {\n    flow.set(\"mic\", false);\n}\n\nreturn null;\n",
+        "outputs": 0,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "2a9bcaaf6641cf3a",
+        "type": "mqtt in",
+        "z": "a26d5d20af5c6be2",
+        "g": "8ae63e4ecefe3e73",
+        "name": "MQTT Nhận token",
+        "topic": "check_all21146282",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "37fcf5bfccf8b220",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 110,
+        "y": 1280,
+        "wires": [
+            [
+                "92f37043caa09a64",
+                "3e9c20415b50e895"
+            ]
+        ]
+    },
+    {
+        "id": "bdd1986cf1864302",
+        "type": "function",
+        "z": "a26d5d20af5c6be2",
+        "g": "95c11e8432e62ddb",
+        "name": "Check quyền",
+        "func": "if (flow.get(\"mic\") === true) {\n    return msg;\n} else {\n    node.warn(\"Không có quyền sử dụng\");\n    return null;\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 760,
+        "wires": [
+            [
+                "aa6b3cbf89643be1"
+            ]
+        ]
+    },
+    {
+        "id": "3e9c20415b50e895",
+        "type": "debug",
+        "z": "a26d5d20af5c6be2",
+        "g": "8ae63e4ecefe3e73",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 1280,
         "wires": []
     },
     {
