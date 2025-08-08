@@ -1283,7 +1283,7 @@
         "order": 2,
         "width": 3,
         "height": 1,
-        "format": "<style>\n  .fancy-btn {\n    position: relative;\n    display: inline-block;\n    padding: 12px 28px;\n    font-size: 14px;\n    width: 140px;\n    font-weight: bold;\n    color: white;\n    background: linear-gradient(135deg, #00eaff, #0077ff);\n    border: none;\n    border-radius: 10px;\n    cursor: pointer;\n    overflow: hidden;\n    transition: transform 0.3s ease;\n    /* Đổ bóng ngoài mờ hơn */\n    box-shadow: 0 0 12px rgba(0, 234, 255, 0.3), 0 0 24px rgba(0, 119, 255, 0.25);\n  }\n\n  .fancy-btn:hover {\n    transform: scale(1.05);\n  }\n\n  .fancy-btn::before {\n    content: '';\n    position: absolute;\n    top: 0;\n    left: -75%;\n    width: 50%;\n    height: 100%;\n    background: rgba(255, 255, 255, 0.25);\n    transform: skewX(-25deg);\n    animation: sweep 2s infinite;\n  }\n\n  @keyframes sweep {\n    0% {\n      left: -75%;\n    }\n\n    100% {\n      left: 125%;\n    }\n  }\n\n  .fadeout {\n    animation: fadeOutBody 1s forwards;\n  }\n\n  @keyframes fadeOutBody {\n    to {\n      opacity: 0;\n      transform: scale(1.02);\n    }\n  }\n</style>\n\n<div style=\"text-align:center; margin-top: 0;\">\n  <button class=\"fancy-btn\" onclick=\"fadeAndGo()\">THOÁT</button>\n</div>\n\n<script>\n  function fadeAndGo() {\n    document.body.classList.add('fadeout');\n    const audio = new Audio('https://assets.mixkit.co/sfx/download/mixkit-interface-click-1125.mp3');\n    audio.play();\n    setTimeout(() => {\n      window.location.href = \"https://cisat.hcmute.edu.vn/\";\n    }, 1000);\n  }\n</script>",
+        "format": "<style>\n  .fancy-btn {\n    position: relative;\n    display: inline-block;\n    padding: 12px 28px;\n    font-size: 14px;\n    width: 140px;\n    font-weight: bold;\n    color: white;\n    background: linear-gradient(135deg, #00eaff, #0077ff);\n    border: none;\n    border-radius: 10px;\n    cursor: pointer;\n    overflow: hidden;\n    transition: transform 0.3s ease;\n    /* Đổ bóng ngoài mờ hơn */\n    box-shadow: 0 0 12px rgba(0, 234, 255, 0.3), 0 0 24px rgba(0, 119, 255, 0.25);\n  }\n\n  .fancy-btn:hover {\n    transform: scale(1.05);\n  }\n\n  .fancy-btn::before {\n    content: '';\n    position: absolute;\n    top: 0;\n    left: -75%;\n    width: 50%;\n    height: 100%;\n    background: rgba(255, 255, 255, 0.25);\n    transform: skewX(-25deg);\n    animation: sweep 2s infinite;\n  }\n\n  @keyframes sweep {\n    0% {\n      left: -75%;\n    }\n\n    100% {\n      left: 125%;\n    }\n  }\n\n  .fadeout {\n    animation: fadeOutBody 1s forwards;\n  }\n\n  @keyframes fadeOutBody {\n    to {\n      opacity: 0;\n      transform: scale(1.02);\n    }\n  }\n</style>\n\n<div style=\"text-align:center; margin-top: 0;\">\n  <button class=\"fancy-btn\" onclick=\"fadeAndGo()\">ĐĂNG XUẤT</button>\n</div>\n\n<script>\n  function fadeAndGo() {\n    document.body.classList.add('fadeout');\n    const audio = new Audio('https://assets.mixkit.co/sfx/download/mixkit-interface-click-1125.mp3');\n    audio.play();\n    setTimeout(() => {\n      window.location.href = \"https://node-red-on-render-pgsk.onrender.com/ui\";\n    }, 1000);\n  }\n</script>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
@@ -1640,6 +1640,65 @@
         "wires": []
     },
     {
+        "id": "inject_ping",
+        "type": "inject",
+        "z": "a26d5d20af5c6be2",
+        "name": "Ping mỗi 7 phút",
+        "props": [],
+        "repeat": "420",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 1760,
+        "wires": [
+            [
+                "http_ping"
+            ]
+        ]
+    },
+    {
+        "id": "http_ping",
+        "type": "http request",
+        "z": "a26d5d20af5c6be2",
+        "name": "Ping đến chính app",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://render-node-red-uno2.onrender.com/ui/",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 360,
+        "y": 1760,
+        "wires": [
+            [
+                "debug_ping"
+            ]
+        ]
+    },
+    {
+        "id": "debug_ping",
+        "type": "debug",
+        "z": "a26d5d20af5c6be2",
+        "name": "Kết quả ping",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 570,
+        "y": 1760,
+        "wires": []
+    },
+    {
         "id": "db456837885faf52",
         "type": "ui_spacer",
         "z": "a26d5d20af5c6be2",
@@ -1690,6 +1749,10 @@
         "willMsg": {},
         "userProps": "",
         "sessionExpiry": ""
+        "credentials": {
+         "user": "bomgamehcm123",
+         "password": "Nguyendeptrai123"
+  }
     },
     {
         "id": "37fcf5bfccf8b220",
