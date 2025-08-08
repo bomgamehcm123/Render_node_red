@@ -1,3 +1,4 @@
+console.log("✅ Đang dùng đúng settings.js có mật khẩu!");
 module.exports = {
     flowFile: 'flows.json', // Flow JSON bạn đang dùng
     uiPort: process.env.PORT || 1880,
